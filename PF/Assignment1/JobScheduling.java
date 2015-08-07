@@ -88,7 +88,6 @@ public class JobScheduling {
 			result[i][2]=waiting_time[i];
 			result[i][3]=job_start_time[i];
 			result[i][4]=job_finished_time[i];
-			
 		}
 		return result;
 	}

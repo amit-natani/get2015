@@ -3,67 +3,67 @@ public class MergeSort {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int[] a=new int[5];
-		int[] b=new int[5];
+		int[] firstSortedArray=new int[5];
+		int[] secondSortedArray=new int[5];
 		MergeSort one=new MergeSort();
 		java.util.Scanner sc=new java.util.Scanner(System.in);
 		System.out.println("Enter elements of first sorted array: ");
 		for(int i=0;i<5;i++)
 		{
-			a[i]=sc.nextInt();
+			firstSortedArray[i]=sc.nextInt();
 		}
 		System.out.println("Enter elements of second sorted array: ");
 		for(int i=0;i<5;i++)
 		{
-			b[i]=sc.nextInt();
+			secondSortedArray[i]=sc.nextInt();
 		}
-		int c[]=new int[10];
-		c=one.join(a,5,b,5,c);
+		int mergedArray[]=new int[10];
+		mergedArray=one.join(firstSortedArray,5,secondSortedArray,5,mergedArray);
 		System.out.println("Joined array is: ");
 		for(int i=0;i<10;i++)
 		{
-			System.out.println(c[i]);
+			System.out.println(mergedArray[i]);
 		}
 		sc.close();
 	}
-	public int[] join(int a[], int asize, int b[],int bsize, int c[])
+	public int[] join(int firstArray[], int firstArraySize, int secondArray[],int secondArraySize, int mergedArray[])
 	{
 		int k=0;
-		for(int i=0;i<asize;)
+		for(int i=0;i<firstArraySize;)
 		{
-			for(int j=0;j<bsize;)
+			for(int j=0;j<secondArraySize;)
 			{
-				if(a[i]<b[j])
+				if(firstArray[i]<secondArray[j])
 				{
-					c[k]=a[i];
+					mergedArray[k]=firstArray[i];
 					i++;
 					k++;
 				}
 				else
 				{
-					c[k]=b[j];
+					mergedArray[k]=secondArray[j];
 					j++;
 					k++;
 				}
-				if(i==asize)
+				if(i==firstArraySize)
 				{
-					for(int count=k;count<asize+bsize;count++)
+					for(int count=k;count<firstArraySize+secondArraySize;count++)
 					{
-						c[count]=b[j];
+						mergedArray[count]=secondArray[j];
 						j++;
 					}
 				}
-				else if(j==bsize)
+				else if(j==secondArraySize)
 				{
-					for(int count=k;count<asize+bsize;count++)
+					for(int count=k;count<firstArraySize+secondArraySize;count++)
 					{
-						c[count]=a[i];
+						mergedArray[count]=firstArray[i];
 						i++;
 					}
 				}
 			}
 		}
-		return c;
+		return mergedArray;
 	}
 
 }

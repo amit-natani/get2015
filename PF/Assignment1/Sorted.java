@@ -20,23 +20,22 @@ public class Sorted {
 	public int checkSorted(int input[])
 	{
 		int j;
-		int count1=0, count2=0;
-		for(int i=0;i<input.length-1;)
+		int countAscending=0, countDescending=0;
+		for(int i=0;i<input.length-1;i++)
 		{
 			j=i+1;
 			if(input[i]<input[j])
 			{
-				count1++;
+				countAscending++;
 			}
 			else
 			{
-				count2++;
+				countDescending++;
 			}
-			i++;
 		}
-		if(count1==input.length-1)
+		if(countAscending==input.length-1)
 			return 1;
-		else if(count2==input.length-1)
+		else if(countDescending==input.length-1)
 			return 2;
 		else
 			return 0;

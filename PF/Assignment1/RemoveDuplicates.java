@@ -26,25 +26,25 @@ public class RemoveDuplicates {
 	
 	public int[] removeDuplicate(int input[])
 	{
-		int n=input.length-1;
+		int inputStringLength=input.length-1;
 		int i,j,k;
-		for(i=0;i<n;i++)
+		for(i=0;i<inputStringLength;i++)
 		{
-			for(j=i+1;j<=n;j++)
+			for(j=i+1;j<=inputStringLength;j++)
 			{
 				if(input[i]==input[j])
 				{
-					for(k=j;k<n;k++)
+					for(k=j;k<inputStringLength;k++)
 					{
 						input[k]=input[k+1];
 					}
-					n--;
+					inputStringLength--;
 					j--;
 				}
 			}
 		}
-		int output[]=new int[n+1];
-		for(i=0;i<=n;i++)
+		int output[]=new int[inputStringLength+1];
+		for(i=0;i<=inputStringLength;i++)
 		{
 			output[i]=input[i];
 		}

@@ -8,26 +8,27 @@ public class BinaryToOctal {
 		int binaryNumber;
 		System.out.println("Enter a Binary Number");
 		binaryNumber=sc.nextInt();
-		int octal=one.convertBinaryToOctal(binaryNumber);
-		System.out.println(octal);
+		int octalNumber=one.convertBinaryToOctal(binaryNumber);
+		System.out.println(octalNumber);
+		sc.close();
 
 	}
 	
-	public int convertBinaryToOctal(int n)
+	public int convertBinaryToOctal(int binaryNumber)
 	{
 		int countDigits=0;
-		int m;
+		int copy;
 		int decNumber=0;
-		m=n;
-		while(n!=0)
+		copy=binaryNumber;
+		while(binaryNumber!=0)
 		{
-			n=n/10;
+			binaryNumber=binaryNumber/10;
 			countDigits++;
 		}
 		for(int i=0;i<countDigits;i++)
 		{
-			decNumber=decNumber+(m%10)*power(2,i);
-			m=m/10;
+			decNumber=decNumber+(copy%10)*power(2,i);
+			copy=copy/10;
 		}
 		int i=1;
 		int octalNumber=0;
@@ -35,7 +36,6 @@ public class BinaryToOctal {
 		{
 			octalNumber=octalNumber+(decNumber%8)*i;
 			decNumber=decNumber/8;
-			
 			i=i*10;
 		}
 		return octalNumber;
