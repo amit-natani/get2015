@@ -27,15 +27,15 @@ public class EmployeeTest {
 	@Test
 	public void getEmployeIdTest() {
 		
-		Employee EmployeeObj = new Employee(23456789, "Amit", 101);
+		Employee EmployeeObj = new Employee(23456789, "Amit", 101, "Finance");
 		assertEquals("",101, EmployeeObj.getEmployeeId());
 	}
 	
 	@Test
 	public void toStringTest() {
 		
-		Employee EmployeeObj = new Employee(23456789, "Amit", 101);
-		assertEquals("", "Name: "+EmployeeObj.getName()+", uid: "+EmployeeObj.getUid() +", EmployeeId: "+EmployeeObj.getEmployeeId(), EmployeeObj.toString());
+		Employee EmployeeObj = new Employee(23456789, "Amit", 101, "Accounts");
+		assertEquals("", "Name: "+EmployeeObj.getName()+", uid: "+EmployeeObj.getUid() +", EmployeeId: "+EmployeeObj.getEmployeeId()+", Department: "+EmployeeObj.getDepartment(), EmployeeObj.toString());
 	}
 
 }
