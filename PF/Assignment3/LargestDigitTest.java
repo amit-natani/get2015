@@ -28,22 +28,46 @@ public class LargestDigitTest {
 
 	@Test
 	public void positiveTestCase() {
-		LargestDigitClass LargestDigitTestObj=new LargestDigitClass();
-		assertEquals("",2,LargestDigitTestObj.largestdigit(2, 0));
+		try
+		{
+			LargestDigitClass LargestDigitTestObj=new LargestDigitClass();
+			assertEquals("",2,LargestDigitTestObj.largestdigit(2, 0));
+		}
+		catch(Exception e)
+		{
+			System.out.println(e.getMessage());
+			return;
+		}
 
 	}
 	
 	@Test
 	public void testCaseForZero() {
-		LargestDigitClass LargestDigitTestObj=new LargestDigitClass();
-		assertEquals("", 0, LargestDigitTestObj.largestdigit(000000, 0));
+		try
+		{
+			LargestDigitClass LargestDigitTestObj=new LargestDigitClass();
+			assertEquals("", 0, LargestDigitTestObj.largestdigit(000000, 0));
+		}
+		catch(Exception e)
+		{
+			System.out.println(e.getMessage());
+			return;
+		}
 
 	}
 	
 	@Test
 	public void NegativeNumberTestCase() {
-		LargestDigitClass LargestDigitTestObj=new LargestDigitClass();
-		assertEquals("", 8, LargestDigitTestObj.largestdigit(-5787464, 0));
+		try
+		{
+			LargestDigitClass LargestDigitTestObj=new LargestDigitClass();
+			assertEquals("", 8, LargestDigitTestObj.largestdigit(-5787464, 0));
+		}
+		catch(Exception e)
+		{
+			System.out.println(e.getMessage());
+			return;
+		}
 
 	}
 

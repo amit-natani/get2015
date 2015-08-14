@@ -1,6 +1,5 @@
 import static org.junit.Assert.*;
 
-
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -28,18 +27,30 @@ public class RemainderRecursionTest {
 	@Test
 	public void positiveTestCase() 
 	{
-		RemainderClass remainderTestObject = new RemainderClass();
-		assertEquals("", 1, remainderTestObject.rem(100, 3));
-		//fail("Not yet implemented");
-		
+		try
+		{
+			RemainderClass remainderTestObject = new RemainderClass();
+			assertEquals("", 1, remainderTestObject.rem(100, 3));
+		}
+		catch(Exception e)
+		{
+			System.out.println(e.getMessage());
+			return;
+		}
 	}
 	
 	@Test
 	public void negativeTestCase() 
 	{
-		RemainderClass remainderTestObject = new RemainderClass();
-		assertEquals("", -1, remainderTestObject.rem(2, 0));
-		//fail("Not yet implemented");
-		
+		try
+		{
+			RemainderClass remainderTestObject = new RemainderClass();
+			assertEquals("", -1, remainderTestObject.rem(2, 0));
+		}
+		catch(Exception e)
+		{
+			System.out.println(e.getMessage());
+			return;
+		}
 	}
 }

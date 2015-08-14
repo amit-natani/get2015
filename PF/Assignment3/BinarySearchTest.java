@@ -28,24 +28,46 @@ public class BinarySearchTest {
 	@Test
 	public void negativeTestCase() 
 	{
-		BinarySearchClass binarySearchTestObj=new BinarySearchClass();
-		assertEquals("",-1, binarySearchTestObj.binarySearch(new int[]{2,5,8,9,10,55,77}, 88, 0, 6));
+		try
+		{
+			BinarySearchClass binarySearchTestObj=new BinarySearchClass();
+			assertEquals("",-1, binarySearchTestObj.binarySearch(new int[]{2,5,8,9,10,55,77}, 88, 0, 6));
+		}
+		catch(Exception e)
+		{
+			System.out.println(e.getMessage());
+			return;
+		}
 
 	}
 	
 	@Test
 	public void positiveTestCase() {
-		
-		BinarySearchClass binarySearchTestObj=new BinarySearchClass();
-		assertEquals("",6, binarySearchTestObj.binarySearch(new int[]{2,5,8,9,10,55,77}, 77, 0, 6));
+		try
+		{
+			BinarySearchClass binarySearchTestObj=new BinarySearchClass();
+			assertEquals("",6, binarySearchTestObj.binarySearch(new int[]{2,5,8,9,10,55,77}, 77, 0, 6));
+		}
+		catch(Exception e)
+		{
+			System.out.println(e.getMessage());
+			return;
+		}
 
 	}
 	
 	@Test
 	public void nullArrayTestCase() {
-		
-		BinarySearchClass binarySearchTestObj=new BinarySearchClass();
-		assertEquals("",-1, binarySearchTestObj.binarySearch(new int[]{}, 77, 0, 0));
+		try
+		{
+			BinarySearchClass binarySearchTestObj=new BinarySearchClass();
+			assertEquals("",-1, binarySearchTestObj.binarySearch(new int[]{}, 77, 0, 0));
+		}
+		catch(Exception e)
+		{
+			System.out.println(e.getMessage());
+			return;
+		}
 
 	}
 }
