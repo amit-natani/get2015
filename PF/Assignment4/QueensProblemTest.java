@@ -29,11 +29,19 @@ public class QueensProblemTest {
 	@Test
 	public void fourQueenTest() {
 		
-		QueensProblem queensProblemTest = new QueensProblem(4);
+		QueenProblemClass queensProblemTest = null;
+		try
+		{
+			queensProblemTest = new QueenProblemClass(4);
+		}
+		catch(Exception e)
+		{
+			System.out.println(e.getMessage());
+			return;
+		}
 		int expected[][] = {{'0','0','1','0'}, {'1','0','0','0'}, {'0','0','0','1'}, {'0','1','0','0'}};
 		int actual[][] = queensProblemTest.callplaceNqueens();
-		QueensProblemTest testObject = new QueensProblemTest();
-		int result=testObject.compare(expected, actual);
+		int result=compare(expected, actual);
 		assertEquals("", 1,result);
 		//fail("Not yet implemented");
 	}

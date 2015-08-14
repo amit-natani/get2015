@@ -2,7 +2,7 @@
  *Program Title: N-queens Problem
  *Date: 12 Aug 2015
  */
-import java.util.*;			// package imported to use Scanenr class
+import java.util.*;			// package imported to use Scanner class
 
 /**
  * @author Amit
@@ -14,30 +14,56 @@ public class QueensProblem
 	/**
 	 * @param args
 	 */
-	static int[] check;					
-	int resultArray[][];				
+	public static void main(String[] args) 
+	{
+
+		Scanner sc = null;
+		try
+		{
+			System.out.println("Enter queens");
+	    	sc=new Scanner(System.in);							
+	    	int noOfQueens=sc.nextInt();
+	    	if(noOfQueens < 4)
+	    	{
+	    		System.out.println("can't be possible for less than 4 queens");
+	    		System.out.println("Enter queens again");
+	    		noOfQueens = sc.nextInt();
+	    	}
+	    	QueenProblemClass queenObject = new QueenProblemClass(noOfQueens); 	// class instantiation and queenObject hods the object of class
+	        queenObject.callplaceNqueens();										// method invocation on behalf of object
+	        sc.close();  														// closing scanner object
+		}
+		catch(Exception e)
+		{
+			System.out.println(e.getMessage());
+			sc.close();
+			return;
+		}
+	}
+}
 	
-	/* constructor of class for object creation with parameter noOfQueens */
-	public QueensProblem(int numOfQueens) 
+class QueenProblemClass
+{
+	int resultArray[][];
+	int check[];
+	public QueenProblemClass(int numOfQueens) 
 	{
         check = new int[numOfQueens];		// Array definition with size as noOFQueens
     }
-	public static void main(String[] args) 
-	{
-		// TODO Auto-generated method stub
-		System.out.println("Enter queens");
-    	Scanner sc=new Scanner(System.in);							
-    	int noOfQueens=sc.nextInt();								
-        QueensProblem queenObject = new QueensProblem(noOfQueens); 	// class instantiation and queenObject hods the object of class
-        queenObject.callplaceNqueens();					// method invocation on behalf of object
-        sc.close();  									// closing scanner object
-	}
 	
 	/* this method print the queens in respective places */
 	public int[][] printQueens(int[] itemArray) 
 	{
         int noOfQueens = itemArray.length;
-        int tempResult[][]= new int[noOfQueens][noOfQueens]; //temp result stores the 2D array for representation of queens
+        int tempResult[][] = null;
+        try
+        {
+        	tempResult= new int[noOfQueens][noOfQueens]; //temp result stores the 2D array for representation of queens
+        }
+        catch(Exception e)
+        {
+        	System.out.println(e.getMessage());
+        }
         for (int i = 0; i < noOfQueens; i++) {
             for (int j = 0; j < noOfQueens; j++) {
                 if (itemArray[i] == j) {
@@ -80,25 +106,31 @@ public class QueensProblem
          * Using backtracking this method prints all possible placements of
          * noOfQueens queens on an noOfQueens x noOfQueens chessboard so that they are non-attacking.
          */
-		
-		for (int count = 0; count < noOfQueens; count++) 
-        {
-            if (canPlaceQueen(row, count)) 
-            {
-                check[row] = count;
-                if (row == noOfQueens - 1) 
-                {
-                    resultArray=printQueens(check);
-                    return resultArray;
-                    
-                  
-                } 
-                else 
-                {
-                    placeNqueens(row + 1, noOfQueens);
-                }
-            }
-        }
+		try
+		{
+			for (int count = 0; count < noOfQueens; count++) 
+	        {
+	            if (canPlaceQueen(row, count)) 
+	            {
+	                check[row] = count;
+	                if (row == noOfQueens - 1) 
+	                {
+	                    resultArray=printQueens(check);
+	                    return resultArray;
+	                    
+	                  
+	                } 
+	                else 
+	                {
+	                    placeNqueens(row + 1, noOfQueens);
+	                }
+	            }
+	        }
+		}
+		catch(Exception e)
+		{
+			System.out.println(e.getMessage());
+		}
         return resultArray;
     }
 	

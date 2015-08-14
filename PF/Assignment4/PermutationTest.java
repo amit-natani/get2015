@@ -5,6 +5,7 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+
 import java.util.*;
 
 /**
@@ -51,15 +52,23 @@ public class PermutationTest {
 	@Test
 	public void testWithThreeCharacterString() {
 		
-		Permutation permutationTestObj = new Permutation();
-		String expectedPermutations[] = {"abc","acb","bac","bca","cab","cba"};
-		List<String> PermutationList;
-		PermutationList=permutationTestObj.permute("abc");
-		int i=0;
-		for(String stringPermutation : PermutationList)
+		try
 		{
-			assertEquals("", expectedPermutations[i], stringPermutation);
-			i++;
+			StringPermutation permutationTestObj = new StringPermutation();
+			String expectedPermutations[] = {"abc","acb","bac","bca","cab","cba"};
+			List<String> PermutationList;
+			PermutationList=permutationTestObj.permute("abc");
+			int i=0;
+			for(String stringPermutation : PermutationList)
+			{
+				assertEquals("", expectedPermutations[i], stringPermutation);
+				i++;
+			}
+		}
+		catch(Exception e)
+		{
+			System.out.println(e.getMessage());
+			return;
 		}
 	}
 	
@@ -68,15 +77,23 @@ public class PermutationTest {
 	@Test
 	public void testWithTwoCharacterString() {
 		
-		Permutation permutationTestObj = new Permutation();
-		String expectedPermutations[] = {"ab","ba"};
-		List<String> PermutationList;
-		PermutationList=permutationTestObj.permute("ab");
-		int i=0;
-		for(String stringPermutation: PermutationList)
+		try
 		{
-			assertEquals("", expectedPermutations[i], stringPermutation);
-			i++;
+			StringPermutation permutationTestObj = new StringPermutation();
+			String expectedPermutations[] = {"ab","ba"};
+			List<String> PermutationList;
+			PermutationList=permutationTestObj.permute("ab");
+			int i=0;
+			for(String stringPermutation: PermutationList)
+			{
+				assertEquals("", expectedPermutations[i], stringPermutation);
+				i++;
+			}
+		}
+		catch(Exception e)
+		{
+			System.out.println(e.getMessage());
+			return;
 		}
 
 	}
@@ -86,17 +103,23 @@ public class PermutationTest {
 	@Test
 	public void testWithRepeatedCharacterString() {
 		
-		Permutation testObject3 = new Permutation();
-		String expectedPermutations[] = {"abb","bab","bba"};
-		List<String> PermutationList;
-		PermutationList=testObject3.permute("abb");
-		int i=0;
-		for(String stringPermutation : PermutationList)
+		try
 		{
-			assertEquals("", expectedPermutations[i], stringPermutation);
-			i++;
+			StringPermutation testObject3 = new StringPermutation();
+			String expectedPermutations[] = {"abb","bab","bba"};
+			List<String> PermutationList;
+			PermutationList=testObject3.permute("abb");
+			int i=0;
+			for(String stringPermutation : PermutationList)
+			{
+				assertEquals("", expectedPermutations[i], stringPermutation);
+				i++;
+			}
 		}
-
+		catch(Exception e)
+		{
+			System.out.println(e.getMessage());
+			return;
+		}
 	}
-
 }

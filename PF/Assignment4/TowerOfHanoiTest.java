@@ -49,7 +49,16 @@ public class TowerOfHanoiTest {
 	/* test for 3 disks */
 	@Test
 	public void testWithThreeDisks() {	
-		TowerOfHanoi towerHanoiTestObj = new TowerOfHanoi();
+		TowerOfHanoiClass towerHanoiTestObj = null;
+		try
+		{
+			towerHanoiTestObj = new TowerOfHanoiClass();
+		}
+		catch(Exception e)
+		{
+			System.out.println(e.getMessage());
+			return;
+		}
 		List<String> actual = new ArrayList<String>();
 		String expected[]={"Move Disk   1   A->B", "Move Disk   2   A->C", "Move Disk   1   B->C", "Move Disk   3   A->B", "Move Disk   1   C->A", "Move Disk   2   C->B", "Move Disk   1   A->B"};
 		towerHanoiTestObj.towerOfHanoi("A", "B", "C", 3, actual);
@@ -67,7 +76,17 @@ public class TowerOfHanoiTest {
 	@Test
 	public void testWithOneDisk() {
 		
-		TowerOfHanoi towerHanoiTestObj = new TowerOfHanoi();
+		TowerOfHanoiClass towerHanoiTestObj = null;
+		try
+		{
+			towerHanoiTestObj = new TowerOfHanoiClass();
+		}
+		catch(Exception e)
+		{
+			System.out.println(e.getMessage());
+			return;
+		}
+
 		List<String> actual = new ArrayList<String>();
 		String expected[]={"Move Disk   1   A->B"};
 		towerHanoiTestObj.towerOfHanoi("A", "B", "C", 1, actual);
@@ -85,7 +104,17 @@ public class TowerOfHanoiTest {
 	@Test
 	public void testWithTwoDisks() {
 		
-		TowerOfHanoi towerHanoiTestObj = new TowerOfHanoi();
+		TowerOfHanoiClass towerHanoiTestObj = null;
+		try
+		{
+			towerHanoiTestObj = new TowerOfHanoiClass();
+		}
+		catch(Exception e)
+		{
+			System.out.println(e.getMessage());
+			return;
+		}
+
 		List<String> actual = new ArrayList<String>();
 		String expected[]={"Move Disk   1   A->C", "Move Disk   2   A->B", "Move Disk   1   C->B"};
 		towerHanoiTestObj.towerOfHanoi("A", "B", "C", 2, actual);
@@ -95,7 +124,6 @@ public class TowerOfHanoiTest {
 			assertEquals("", expected[i], resultString);
 			i++;
 		}
-		//fail("Not yet implemented");
 	}
 
 }
