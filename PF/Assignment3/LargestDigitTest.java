@@ -28,23 +28,23 @@ public class LargestDigitTest {
 
 	@Test
 	public void positiveTestCase() {
-		LargestDigit objTest=new LargestDigit();
-		assertEquals("",2,objTest.largestdigit(2));
-		//fail("Not yet implemented");
+		LargestDigitClass LargestDigitTestObj=new LargestDigitClass();
+		assertEquals("",2,LargestDigitTestObj.largestdigit(2, 0));
+
 	}
 	
 	@Test
 	public void testCaseForZero() {
-		LargestDigit objTest=new LargestDigit();
-		assertEquals("", 0, objTest.largestdigit(000000));
-		//fail("Not yet implemented");
+		LargestDigitClass LargestDigitTestObj=new LargestDigitClass();
+		assertEquals("", 0, LargestDigitTestObj.largestdigit(000000, 0));
+
 	}
 	
 	@Test
 	public void NegativeNumberTestCase() {
-		LargestDigit objTest=new LargestDigit();
-		assertEquals("", 8, objTest.largestdigit(-5787464));
-		//fail("Not yet implemented");
+		LargestDigitClass LargestDigitTestObj=new LargestDigitClass();
+		assertEquals("", 8, LargestDigitTestObj.largestdigit(-5787464, 0));
+
 	}
 
 }

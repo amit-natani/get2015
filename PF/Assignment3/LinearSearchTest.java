@@ -27,24 +27,24 @@ public class LinearSearchTest {
 
 	@Test
 	public void negativeTestCase() {
-		LinearSearch objTest=new LinearSearch();
-		assertEquals("", -1, objTest.linearSearch(new int[]{2,5,8,9,10,77,55}, 88));
-		//fail("Not yet implemented");
+		LinearSearchClass linearSearchTestObj=new LinearSearchClass();
+		assertEquals("", -1, linearSearchTestObj.linearSearch(new int[]{2,5,8,9,10,77,55}, 88, 0));
+
 	}
 	
 	@Test
 	public void tpositiveTestCase() {
-		LinearSearch objTest=new LinearSearch();
-		assertEquals("", 5, objTest.linearSearch(new int[]{2,5,8,9,10,77,55,11}, 77));
-		//fail("Not yet implemented");
+		LinearSearchClass linearSearchTestObj=new LinearSearchClass();
+		assertEquals("", 5, linearSearchTestObj.linearSearch(new int[]{2,5,8,9,10,77,55,11}, 77, 0));
+
 	}
 	
 	@Test
 	public void nullArraytestCase() {
 		
-		LinearSearch objTest=new LinearSearch();
-		assertEquals("",-1, objTest.linearSearch(new int[]{}, 77));
-		//fail("Not yet implemented");
+		LinearSearchClass linearSearchTestObj=new LinearSearchClass();
+		assertEquals("",-1, linearSearchTestObj.linearSearch(new int[]{}, 77, 0));
+
 	}
 	
 

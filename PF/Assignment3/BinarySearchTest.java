@@ -28,7 +28,7 @@ public class BinarySearchTest {
 	@Test
 	public void negativeTestCase() 
 	{
-		BinarySearch binarySearchTestObj=new BinarySearch();
+		BinarySearchClass binarySearchTestObj=new BinarySearchClass();
 		assertEquals("",-1, binarySearchTestObj.binarySearch(new int[]{2,5,8,9,10,55,77}, 88, 0, 6));
 
 	}
@@ -36,7 +36,7 @@ public class BinarySearchTest {
 	@Test
 	public void positiveTestCase() {
 		
-		BinarySearch binarySearchTestObj=new BinarySearch();
+		BinarySearchClass binarySearchTestObj=new BinarySearchClass();
 		assertEquals("",6, binarySearchTestObj.binarySearch(new int[]{2,5,8,9,10,55,77}, 77, 0, 6));
 
 	}
@@ -44,7 +44,7 @@ public class BinarySearchTest {
 	@Test
 	public void nullArrayTestCase() {
 		
-		BinarySearch binarySearchTestObj=new BinarySearch();
+		BinarySearchClass binarySearchTestObj=new BinarySearchClass();
 		assertEquals("",-1, binarySearchTestObj.binarySearch(new int[]{}, 77, 0, 0));
 
 	}

@@ -28,7 +28,7 @@ public class RemainderRecursionTest {
 	@Test
 	public void positiveTestCase() 
 	{
-		RemainderRecursion remainderTestObject = new RemainderRecursion();
+		RemainderClass remainderTestObject = new RemainderClass();
 		assertEquals("", 1, remainderTestObject.rem(100, 3));
 		//fail("Not yet implemented");
 		
@@ -37,7 +37,7 @@ public class RemainderRecursionTest {
 	@Test
 	public void negativeTestCase() 
 	{
-		RemainderRecursion remainderTestObject = new RemainderRecursion();
+		RemainderClass remainderTestObject = new RemainderClass();
 		assertEquals("", -1, remainderTestObject.rem(2, 0));
 		//fail("Not yet implemented");
 		

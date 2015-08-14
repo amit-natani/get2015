@@ -2,48 +2,51 @@ import java.util.*;							// Package imported to use Scanner class
 public class QuickSort {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		Scanner sc=new Scanner(System.in);	
-		int noOfElements;					
-		System.out.println("Enter no of elements: ");		
+		/* Initialization */
+		Scanner sc = null;
 		try
 		{
+			sc = new Scanner(System.in);	
+			int noOfElements;					
+			System.out.println("Enter no of elements: ");		
 			noOfElements=sc.nextInt();						// In this line total no of elements are takes as input and assigned to variable noOfElements
+			if(noOfElements<=0)
+			{
+				System.out.println("Enter positive no of elements: (>0)");	// This message will be printed if the no of elements is zero or negative
+			}
+			else
+			{
+				int itemArray[]=new int[noOfElements];		
+				System.out.println("Enter items of Array: ");
+				for(int i=0;i<noOfElements;i++)
+				{
+					itemArray[i]=sc.nextInt();				// input elements of array using Scanner class object sc
+				}
+				QuickSortClass quickSortObj=new QuickSortClass();							
+				
+				/*	method invocation with parameters itemArray, left index and right index and the method will return
+				 *	a sorted Array that will be stored in itemArray
+				 **/
+				itemArray=quickSortObj.recQuickSort(itemArray, 0, noOfElements-1);
+				System.out.println("Sorted Array is: ");
+				for(int i=0;i<noOfElements;i++)
+				{
+					System.out.println(itemArray[i]);			// printing the sorted array 
+				}
+			}
+			sc.close();
 		}
 		catch(Exception e)
 		{
 			System.out.println(e.getMessage());
-			System.out.println("Enter valid number");
 			sc.close();
 			return;
 		}
-		if(noOfElements<=0)
-		{
-			System.out.println("Enter positive no of elements: (>0)");	// This message will be printed if the no of elements is zero or negative
-		}
-		else
-		{
-			int itemArray[]=new int[noOfElements];		
-			System.out.println("Enter items of Array: ");
-			for(int i=0;i<noOfElements;i++)
-			{
-				itemArray[i]=sc.nextInt();				// input elements of array using Scanner class object sc
-			}
-			QuickSort quickSortObj=new QuickSort();							
-			
-			/*	method invocation with parameters itemArray, left index and right index and the method will return
-			 *	a sorted Array that will be stolow in itemArray
-			 **/
-			itemArray=quickSortObj.recQuickSort(itemArray, 0, noOfElements-1);
-			System.out.println("Sorted Array is: ");
-			for(int i=0;i<noOfElements;i++)
-			{
-				System.out.println(itemArray[i]);			// printing the sorted array 
-			}
-		}
-		sc.close();
 	}
-	
+}
+
+class QuickSortClass
+{
 	/* this recursive method takes itemArray[], left index and right index as input 
 	 * and returns the sorted array
 	 **/

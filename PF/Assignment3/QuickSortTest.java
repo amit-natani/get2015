@@ -47,40 +47,40 @@ public class QuickSortTest {
 	@Test
 	public void testWorstCase() {
 		
-		QuickSort quickSortTest=new QuickSort();
-		assertArrayEquals(new int[]{1,2,3,4,5,6,7,8}, quickSortTest.recQuickSort(new int[]{8,7,6,5,4,3,2,1}, 0, 7));
+		QuickSortClass quickSortTestObj=new QuickSortClass();
+		assertArrayEquals(new int[]{1,2,3,4,5,6,7,8}, quickSortTestObj.recQuickSort(new int[]{8,7,6,5,4,3,2,1}, 0, 7));
 		//fail("Not yet implemented");
 	}
 	
 	@Test
 	public void testBestCase() {
 		
-		QuickSort quickSortTest=new QuickSort();
-		assertArrayEquals(new int[]{1,2,3,4,5,6,7,8}, quickSortTest.recQuickSort(new int[]{1,2,3,4,5,6,7,8}, 0, 7));
+		QuickSortClass quickSortTestObj=new QuickSortClass();
+		assertArrayEquals(new int[]{1,2,3,4,5,6,7,8}, quickSortTestObj.recQuickSort(new int[]{1,2,3,4,5,6,7,8}, 0, 7));
 
 	}
 	
 	@Test
 	public void testAverageCase() {
 		
-		QuickSort quickSortTest=new QuickSort();
-		assertArrayEquals(new int[]{1,2,3,4,5,6,7,8}, quickSortTest.recQuickSort(new int[]{5,4,3,2,6,7,8,1}, 0, 7));
+		QuickSortClass quickSortTestObj=new QuickSortClass();
+		assertArrayEquals(new int[]{1,2,3,4,5,6,7,8}, quickSortTestObj.recQuickSort(new int[]{5,4,3,2,6,7,8,1}, 0, 7));
 ;
 	}
 	
 	@Test
 	public void testForEmptyArray() {
 		
-		QuickSort quickSortTest=new QuickSort();
-		assertArrayEquals(new int[]{}, quickSortTest.recQuickSort(new int[]{}, -1, -1));
+		QuickSortClass quickSortTestObj=new QuickSortClass();
+		assertArrayEquals(new int[]{}, quickSortTestObj.recQuickSort(new int[]{}, -1, -1));
 
 	}
 	
 	@Test
 	public void testWithNegativeNumbers() {
 		
-		QuickSort quickSortTest=new QuickSort();
-		assertArrayEquals(new int[]{-8,-5,-5,1,7}, quickSortTest.recQuickSort(new int[]{-5,-5,1,-8,7}, 0, 4));
+		QuickSortClass quickSortTestObj=new QuickSortClass();
+		assertArrayEquals(new int[]{-8,-5,-5,1,7}, quickSortTestObj.recQuickSort(new int[]{-5,-5,1,-8,7}, 0, 4));
 
 	}
 

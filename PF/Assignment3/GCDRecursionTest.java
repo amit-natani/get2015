@@ -28,15 +28,15 @@ public class GCDRecursionTest {
 
 	@Test
 	public void positiveTestCase() {
-		GCDRecursion objTest=new GCDRecursion();
-		assertEquals("", 2, objTest.gcd(2, 2));
+		GCDClass GCDTestObj=new GCDClass();
+		assertEquals("", 2, GCDTestObj.gcd(2, 2));
 
 	}
 	
 	@Test
 	public void negativeTestCase() {
-		GCDRecursion objTest=new GCDRecursion();
-		assertEquals("", -1, objTest.gcd(98, -1));
+		GCDClass GCDTestObj=new GCDClass();
+		assertEquals("", -1, GCDTestObj.gcd(98, -1));
 
 	}
 }
