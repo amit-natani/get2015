@@ -38,7 +38,7 @@ public class SurveyQuestion
 	public String ratingHeritages(boolean flag)
 	{
 		if(flag == false)
-			return "Overall rating of trip:(Only single selection is allowed)\n 1. Excellent\n 2. Good \n 3. Fair \n 4. Dull\n";
+			return "Overall rating of trip:(Only single selection is allowed)\n 1. Excellent\n 2. Good \n 3. Fair \n 4. bad\n";
 		else
 			return "Overall rating of trip: ";
 	}

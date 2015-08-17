@@ -49,6 +49,8 @@ public class Survey {
 					/* if choice is 1 */
 					case 1:
 						count=count+1;
+						
+						 /* first question */
 						System.out.println(surveyQuestionObj.age(false));
 						age = scan.nextInt();
 						if(age<18)
@@ -57,27 +59,36 @@ public class Survey {
 							break;
 						}
 						answerObj.age(age);
+						
+						 /* Second question */
 						System.out.println(surveyQuestionObj.nationality(false));
 						answer = bufferedReaderObj.readLine();
 						answerObj.nationality(answer);
+						
+						 /* Third question */
 						System.out.println(surveyQuestionObj.gender(false));
 						answer = bufferedReaderObj.readLine();
 						answerObj.gender(answer);
-						System.out.println(surveyQuestionObj.ratingHeritages(false));	// retrieving first question
+						
+						 /* Fourth question */
+						System.out.println(surveyQuestionObj.ratingHeritages(false));	
 						rating=scan.nextInt();									
 						if(rating!=1 && rating!=2 && rating!=3 && rating!=4)
 						{
 							System.out.println("Please enter from available options");
 							rating=scan.nextInt();
 						}
-						answerObj.rating(rating); 		// storing answer of first question
-						System.out.println(surveyQuestionObj.favoriteHeritages(false));	// retrieving second question
+						answerObj.rating(rating); 		
+						
+						/* Fifth question */
+						System.out.println(surveyQuestionObj.favoriteHeritages(false));	
 						answer = bufferedReaderObj.readLine();
-						answerObj.favoriteHeritages(answer); 	// storing answer of second question
-						System.out.println(surveyQuestionObj.feedback(false));		// retrieving third question
+						answerObj.favoriteHeritages(answer); 	
+						
+						/* Sixth question */
+						System.out.println(surveyQuestionObj.feedback(false));		
 						answer= bufferedReaderObj.readLine();;						
-						answerObj.feedbackSet(answer);						// storing answer of third question
-						break;
+						answerObj.feedbackSet(answer);						
 					
 						/* if choice is 2 */
 					case 2:
@@ -88,7 +99,7 @@ public class Survey {
 						}
 						for(i=1;i<=count;i++)
 						{
-							result=answerObj.getRating(i);	// retrieving answer of first question
+							result=answerObj.getRating(i);	
 							if(result==1)
 								totalA+=1.0;
 							
@@ -119,27 +130,32 @@ public class Survey {
 						for(i=1;i<=count;i++)
 						{
 							System.out.println("\nTourist " +i+"\n");
-							
+							 /* first question */
 							System.out.print(surveyQuestionObj.age(true));
-							age=answerObj.getAge(i);	// retrieving answer of first question
+							age=answerObj.getAge(i);	
 							System.out.println(age+"\n");
 							
+							/* Second question */
 							System.out.print(surveyQuestionObj.nationality(true));
-							answer=answerObj.getNationality(i);	// retrieving answer of second question
+							answer=answerObj.getNationality(i);	
 							System.out.println(answer+"\n");
 							
+							/* third question */
 							System.out.print(surveyQuestionObj.gender(true));
 							answer = answerObj.getGender(i);
 							System.out.println(answer+"\n");
-				
+							
+							/* Fourth question */
 							System.out.print(surveyQuestionObj.ratingHeritages(true));
 							rating = answerObj.getRating(i);
-							System.out.println(rating+"\n");// retrieving answer of third question
+							System.out.println(rating+"\n");
 							
+							/* Fifth question */
 							System.out.print(surveyQuestionObj.favoriteHeritages(true));
 							answer = answerObj.getfavoriteHeritages(i);
 							System.out.println(answer+"\n");
 							
+							/* Sixth question */
 							System.out.println(surveyQuestionObj.feedback(true));
 							answer = answerObj.feedbackGet(i);
 							System.out.println(answer);
