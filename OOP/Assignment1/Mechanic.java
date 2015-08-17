@@ -6,24 +6,26 @@
  * @author Amit
  *
  */
-public class Mechanic extends PersonServiceStation {
 
-	private String car;
-	private int charge;
+public class Mechanic {
 	
-	/**
-	 * @param name
-	 */
-	public Mechanic(String name, String car, int charge) {
-		super(name);
-		this.car = car;
+	String name;
+	String mechId;
+	String speciality;
+	String charge;
+	boolean flag = true;
+		
+	/* Parameterized constructor */
+	public Mechanic(String name, String mechId, String speciality, String charge){	
+		this.name = name;
+		this.mechId = mechId;
+		this.speciality = speciality;
 		this.charge = charge;
-		// TODO Auto-generated constructor stub
 	}
 	
-	public String toString()
-	{
-		return super.toString()+", "+car+", "+charge;
+	/* method for checking the availability of mechanic */
+	boolean isAvailable(){
+		return flag;
 	}
-
+	
 }

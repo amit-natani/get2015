@@ -44,6 +44,7 @@ public class PersonTest {
 	public void tearDown() throws Exception {
 	}
 
+	/* tast case for getUid() */
 	@Test
 	public void getUidTest() {
 		
@@ -51,6 +52,7 @@ public class PersonTest {
 		assertEquals("",23456789, personObj.getUid());
 	}
 	
+	/* tast case for getName() */
 	@Test
 	public void getNameTest() {
 		
@@ -58,6 +60,7 @@ public class PersonTest {
 		assertEquals("", "Amit", personObj.getName());
 	}
 	
+	/* tast case for toString() */
 	@Test
 	public void toStringTest() {
 		

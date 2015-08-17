@@ -11,10 +11,13 @@ public class MainShape {
 	public static void main(String[] args) {
 		try
 		{
-			Circle circle1 = new Circle(7);
-			System.out.println(circle1.getArea());
-			Square square1 = new Square(6);
-			System.out.println(square1.getArea());
+			/* Initialization */
+			Circle circleObj = new Circle(7);
+			Square squareObj = new Square(6);
+			
+			/* Printing area of shapes */
+			System.out.println(circleObj.getArea());	// getArea() returns area of circle;
+			System.out.println(squareObj.getArea());	// getArea() returns area of Square
 		}
 		catch(Exception e)
 		{

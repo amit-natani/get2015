@@ -47,7 +47,7 @@ public class SquareTest {
 	}
 
 	@Test
-	public void test() {
+	public void getAreaTest() {
 		
 		Square squareObj= new Square(7);
 		assertEquals(49.0, squareObj.getArea(), delta);
