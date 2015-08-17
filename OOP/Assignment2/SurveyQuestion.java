@@ -3,25 +3,56 @@
  * @author Amit
  *
  */
-public class SurveyQuestion implements Question {
-	 /* method to return single select question */
-	public String singleSelect(boolean flag)
+public class SurveyQuestion
+{
+	/* method to return Age question */
+	public String age(boolean flag)
 	{
 		if(flag == false)
-			return "Overall rating of student:(Only single selection is allowed)\n 1. Excellent\n 2. Good \n 3. Fair \n 4. Dull\n";
+			return "Enter your age: ";
 		else
-			return "Overall rating of student: ";
+			return "Age: ";
 	}
 	
-	 /* method to return multiple select question */
-	public String multipleSelect(boolean flag)
+	/* method to return nationality question */
+	public String nationality(boolean flag)
 	{
 		if(flag == false)
-			return "Area of improvement: (You can select multiple)\n 1. Service quality\n 2. Communication\n 3. Delivery Process\n(Press 0 if completed)\n";
+			return "Enter your Nationality: ";
 		else
-			return "Area of improvement:";
+			return "Nationality: ";
 	}
 	
+	/* method to return gender question */
+	public String gender(boolean flag)
+	{
+		if(flag == false)
+		{
+			return "Enter Gender: ";
+		}
+		else
+			return "Gender: ";
+	}
+	
+	/* method to return rating question */
+	public String ratingHeritages(boolean flag)
+	{
+		if(flag == false)
+			return "Overall rating of trip:(Only single selection is allowed)\n 1. Excellent\n 2. Good \n 3. Fair \n 4. Dull\n";
+		else
+			return "Overall rating of trip: ";
+	}
+	
+	 /* method to return favorite haritage question */
+	
+	public String favoriteHeritages(boolean flag)
+	{
+		if(flag == false)
+			return "Enter the Haritages which you like the most (use comma seperated list)";
+		else
+			return "Favourite Haritages:";
+	}
+	 
 	 /* method to return feedback question */
 	public String feedback(boolean flag)
 	{

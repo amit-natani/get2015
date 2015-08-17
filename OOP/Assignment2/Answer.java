@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 
 /**
  * @author Amit
@@ -5,57 +8,93 @@
  */
 public class Answer 
 {
-	int single[]=new int[10];
-	int multiple[][] = new int[10][];
-	String feedback[]= new String[10];
-	 
-	/* this method stores answer of single choice questions */
-	void singleAnsSet(int number,int participantNoCount)
+	List<Integer> ageList = new ArrayList<Integer>();
+	List<Integer> ratingList = new ArrayList<Integer>();
+	List<String> genderList = new ArrayList<String>();
+	List<String> nationalityList = new ArrayList<String>();
+	List<String> favoriteHeritagesList= new ArrayList<String>();
+	List<String> feedbackList = new ArrayList<String>();
+	
+	/* this method stores age of a tourist */
+	void age(int number)
 	{
-		single[participantNoCount]=number;
+		ageList.add(number);
+	}
+	/* this method stores rating given by a particular tourist */
+	void rating(int rating)
+	{
+		ratingList.add(rating);
 	}
 	
-	/* this method stores answer of multiple select questions */
-	void multipleAnsSet(int[] improvements, int participantNoCount, int countInput)
+	/* this method stores gender of a particular tourist */
+	void gender(String gender)
 	{
-		multiple[participantNoCount] = new int[countInput];
-		for(int i = 0; i < countInput; i++)
-		{
-			multiple[participantNoCount][i] = improvements[i];
-		}
+		genderList.add(gender);
+	}
+	
+	/* this method stores favorite heritages of a particular tourist */
+	void favoriteHeritages(String favoriteHeritage)
+	{
+		favoriteHeritagesList.add(favoriteHeritage);
+	}
+	
+	/* this method stores nationality of a particular tourist */
+	void nationality(String nationality)
+	{
+		nationalityList.add(nationality);
 	}
 	
 	/* this method stores feedback question */
-	void feedbackSet(String answer,int participantNoCount)
+	void feedbackSet(String answer)
 	{
-		feedback[participantNoCount]=answer;
+		feedbackList.add(answer);
 	}
 	
-	/* this method returns answer option no of single choice questions */
-	int singleAnsGet(int participantNoCount)
+	/* This method returns age of a particular tourist */
+	int getAge(int count)
 	{
-		return single[participantNoCount];
+		int result;
+		result = (int)ageList.get(count-1);
+		return result;
 	}
 	
-	/* this method returns answer of multiple select questions */
-	String multipleAnsGet(int participantNoCount)
+	/* This method returns Nationality of a particular tourist */
+	String getNationality(int count)
 	{
-		String improvementString = "";
-		for(int i = 0; i < multiple[participantNoCount].length; i++)
-		{
-			if(multiple[participantNoCount][i] == 1)
-				improvementString = improvementString + "Service Quality\n";
-			else if(multiple[participantNoCount][i] == 2)
-				improvementString = improvementString + "Communication\n";
-			else if(multiple[participantNoCount][i] == 3)
-				improvementString = improvementString + "Delivery Process\n";
-		}
-		return improvementString;
+		String result;
+		result = nationalityList.get(count-1);
+		return result;
 	}
 	
-	/* this method returns answer of feedback question */
-	String feedbackGet(int participantNoCount)
+	/* This method returns rating given by a particular tourist */
+	int getRating(int count)
 	{
-		return feedback[participantNoCount];
+		int result;
+		result = (int)ratingList.get(count-1);
+		return result;
+	}
+	
+	/* This method returns gender of a particular tourist */
+	String getGender(int count)
+	{
+		String result;
+		result = genderList.get(count-1);
+		return result;
+	}
+	
+	/* This method returns favorite heritages of a particular tourist */
+	String getfavoriteHeritages(int count)
+	{
+		String result;
+		result = favoriteHeritagesList.get(count-1);
+		return result;
+	}
+	
+	/* this method returns feedback of a particular tourist */
+	String feedbackGet(int count)
+	{
+		String result;
+		result = feedbackList.get(count-1);
+		return result;
 	}
 }

@@ -8,7 +8,10 @@
  */
 public interface Question {
 	
-	public String singleSelect(boolean flag);	
-	public String multipleSelect(boolean flag);
+	public String age(boolean flag);
+	public String nationality(boolean flag);
+	public String gender(boolean flag);
+	public String ratingHaritages(boolean flag);
+	public String favouriteHaritages(boolean flag);
 	public String feedback(boolean flag);
 }
