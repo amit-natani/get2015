@@ -8,9 +8,7 @@
  *
  */
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -32,24 +30,18 @@ public class ServiceStation
 		BufferedReader br;
 		try{
 			br = new BufferedReader(new FileReader(MECHANICFILE));
-			try{
-				String line;
-				while ((line = br.readLine()) != null){
-					String[] mechDetails = line.split(",");							// Reading up details line by line
-																					// setting up mechanic object and storing it in mechanic list
-					if (mechDetails.length == 4) 									// if details are less or line is whitespace
-						mechanicsList.add(new Mechanic(mechDetails[0].trim(), mechDetails[1].trim(), mechDetails[2].trim(), mechDetails[3].trim()));
-
-				}
+			String line;
+			while ((line = br.readLine()) != null){
+			String[] mechDetails = line.split(",");							// Reading up details line by line
+			// setting up mechanic object and storing it in mechanic list
+			if (mechDetails.length == 4) 									// if details are less or line is whitespace
+				mechanicsList.add(new Mechanic(mechDetails[0].trim(), mechDetails[1].trim(), mechDetails[2].trim(), mechDetails[3].trim()));
 
 			}
-			catch (IOException e){
-				e.printStackTrace();
-			}
-
 		}
-		catch (FileNotFoundException e1){
-			e1.printStackTrace();
+		catch (Exception e){
+			e.printStackTrace();
+			System.out.println(e.getMessage());
 		}
 
 	}
@@ -58,43 +50,42 @@ public class ServiceStation
 		BufferedReader br;
 		try{
 			br = new BufferedReader(new FileReader(CARFILE));
-			try{
-				String sCurrentLine;
-				while ((sCurrentLine = br.readLine()) != null){
-					String[] carDetails = sCurrentLine.split(",");									// Reading up details line by line
-																									// setting up car object and storing it in Cars list
-					if (carDetails.length == 2) 													// if in case details are less or line is whitespace
-						carList.add(new Cars(carDetails[0].trim(), carDetails[1].trim()));
-
-				}
-
+			String sCurrentLine;
+			while ((sCurrentLine = br.readLine()) != null){
+			String[] carDetails = sCurrentLine.split(",");									// Reading up details line by line																			// setting up car object and storing it in Cars list
+			if (carDetails.length == 2) 													// if in case details are less or line is whitespace
+				carList.add(new Cars(carDetails[0].trim(), carDetails[1].trim()));
 			}
-			catch (IOException e){
-				e.printStackTrace();
-			}
-
 		}
-		catch (FileNotFoundException e1){
-			e1.printStackTrace();
+		catch (Exception e){
+			e.printStackTrace();
+			System.out.println(e.getMessage());
 		}
-
 	}
 
 	public void assignCars(){ 					// method to assign cars to mechanics base don the specialization of the mechanic
-		for (Cars car : carList){
-			for (Mechanic mech : mechanicsList){
-				if (mech.isAvailable() && mech.speciality.equals(car.type)){
-					allotmentList.put(car.carId, mech.mechId);
-					mech.flag = false;
-					totalIncome += Integer.parseInt(mech.charge);
-										
-					if (carsServiced.containsKey(car.type))
-						carsServiced.replace(car.type, carsServiced.get(car.type), carsServiced.get(car.type) + 1);
-					else
-						carsServiced.put(car.type, 1);
-					break;
+		try
+		{
+			for (Cars car : carList){
+				for (Mechanic mech : mechanicsList){
+					if (mech.isAvailable() && mech.speciality.equals(car.type)){
+						allotmentList.put(car.carId, mech.mechId);
+						mech.flag = false;
+						totalIncome += Integer.parseInt(mech.charge);
+											
+						if (carsServiced.containsKey(car.type))
+							carsServiced.replace(car.type, carsServiced.get(car.type), carsServiced.get(car.type) + 1);
+						else
+							carsServiced.put(car.type, 1);
+						break;
+					}
 				}
 			}
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+			System.out.println(e.getMessage());
 		}
 	}
 
