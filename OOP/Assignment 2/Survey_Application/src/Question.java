@@ -7,7 +7,7 @@
  *
  */
 public interface Question {
-	
+
 	public String age(boolean flag);
 	public String nationality(boolean flag);
 	public String gender(boolean flag);
