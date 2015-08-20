@@ -90,7 +90,7 @@ public class MainReservation {
 						result = reservationObj.checkAvailabilityPassengerTrain(trainNo, noOfSeats);
 					}
 					
-					/* if train type == 1 i.e. user has selected goods train */
+					/* if train type == 2 i.e. user has selected goods train */
 					else if(trainType == 2)
 					{
 						
