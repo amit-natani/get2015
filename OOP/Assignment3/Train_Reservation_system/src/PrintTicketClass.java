@@ -34,33 +34,9 @@ public class PrintTicketClass {
 	}
 	
 	/** This method prints the list of passenger train. 
-	 * Internally this method calls printBasic() method to print basic details of train and 
-	 * itself prints only the details specific to Passenger train i.e. available seats 
 	 * @param count : index of the train in the list, whose details are to be printed
 	 */
 	public void printPassengerTrain(int count)
-	{
-		printBasic(count);
-		System.out.print(TrainInfo.passengerTrainList.get(count).getAvailableSeats());
-		System.out.println();
-	}
-	
-	/** This method prints the list of Goods train. 
-	 * Internally this method calls printBasic() method to print basic details of train and 
-	 * itself prints only the details specific to Goods train i.e. available weight 
-	 * @param count : index of the train in the list, whose details are to be printed
-	 */
-	public void printGoodsTrain(int count)
-	{
-		printBasic(count);
-		System.out.print(TrainInfo.goodsTrainList.get(count).getAvailableWeight());
-		System.out.println();
-	}
-	
-	/** This method prints the basic details of the train. 
-	 * @param count : index of the train in the list, whose details are to be printed
-	 */
-	private void printBasic(int count)
 	{
 		System.out.print(TrainInfo.passengerTrainList.get(count).getTrainNo()+"\t\t");
 		System.out.print(TrainInfo.passengerTrainList.get(count).getTrainName()+"\t");
@@ -69,12 +45,30 @@ public class PrintTicketClass {
 		System.out.print(TrainInfo.passengerTrainList.get(count).getFare()+"\t");
 		System.out.print(TrainInfo.passengerTrainList.get(count).getTime()+"\t");
 		System.out.print(TrainInfo.passengerTrainList.get(count).getDuration()+"\t\t");
+		System.out.print(TrainInfo.passengerTrainList.get(count).getAvailableSeats());
+		System.out.println();
+	}
+	
+	/** This method prints the list of Goods train. 
+	 * @param count : index of the train in the list, whose details are to be printed
+	 */
+	public void printGoodsTrain(int count)
+	{
+		System.out.print(TrainInfo.goodsTrainList.get(count).getTrainNo()+"\t\t");
+		System.out.print(TrainInfo.goodsTrainList.get(count).getTrainName()+"\t");
+		System.out.print(TrainInfo.goodsTrainList.get(count).getSource()+"\t");
+		System.out.print(TrainInfo.goodsTrainList.get(count).getDestination()+"\t\t");
+		System.out.print(TrainInfo.goodsTrainList.get(count).getFare()+"\t");
+		System.out.print(TrainInfo.goodsTrainList.get(count).getTime()+"\t");
+		System.out.print(TrainInfo.goodsTrainList.get(count).getDuration()+"\t\t");
+		System.out.print(TrainInfo.goodsTrainList.get(count).getAvailableWeight());
+		System.out.println();
 	}
 	
 	/** This method prints the basic details of the User. 
 	 * @param count : index of the User in the list, whose details are to be printed
 	 */
-	public void printBasicUser(List<User> userList, int count)
+	private void printBasicUser(List<User> userList, int count)
 	{
 		System.out.print(userList.get(count).getUserName()+"\t\t");
 		System.out.print(userList.get(count).getTrainNo()+"\t\t");
@@ -82,4 +76,6 @@ public class PrintTicketClass {
 		System.out.print(userList.get(count).getTime()+"\t\t");
 	}
 }
+
+
 
