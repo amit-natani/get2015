@@ -5,7 +5,7 @@ public class PrintTicketClass {
 	
 	/** This method prints the ticket of user. 
 	 * The ticket will have User Name, Train No, No of booked Seats, Paid Amount and Time of train
-	 * Internally this method calls printBasicuser() method to print basic details of User and 
+	 * Internally this method calls printBasicUser() method to print basic details of User and 
 	 * itself prints only booked seats 
 	 * @param userList : List of objects of user class, generally contains one object
 	 */
@@ -20,7 +20,7 @@ public class PrintTicketClass {
 	
 	/** This method prints the ticket of user. 
 	 * The ticket will have User Name, Train No, Alloted weight, Paid Amount and Time of train
-	 * Internally this method calls printBasicuser() method to print basic details of User and 
+	 * Internally this method calls printBasicUser() method to print basic details of User and 
 	 * itself prints only alloted weight
 	 * @param userList : List of objects of user class, generally contains one object
 	 */
