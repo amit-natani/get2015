@@ -2,8 +2,8 @@
 /**
  * @author Amit
  *
- */
-public class SurveyQuestion
+ */ 
+public class SurveyQuestion implements Question
 {
 	/** Method to return age question
 	 *@param flag : boolean type parameter. false is passed then question is displayed for survey and true
