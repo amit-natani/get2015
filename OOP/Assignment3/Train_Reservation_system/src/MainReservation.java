@@ -27,7 +27,6 @@ public class MainReservation {
 			int trainType, countInput = 0, trainNo = 0, noOfSeats = 0;
 			int result;
 			double weight = 0.0;
-		
 			do
 			{
 				count++;
@@ -41,15 +40,13 @@ public class MainReservation {
 					/* if train type == 1 i.e. user has selected passenger train */
 					if(trainType == 1)
 					{
-						/* listLength will contain size of passenger train list */
-						int listLength = TrainInfo.passengerTrainList.size();
-						
 						/* displaying list of passenger trains */
 						System.out.println("Train No\tTrain Name\tSource\tDestination\tFare\tTime\tDuration\tAvailable Seats\n");
-						for( int i = 0; i < listLength; i++)
+						for(PassengerTrain PassengerTrainObj : TrainInfo.passengerTrainList)
 						{
-							printTicketClassObj.printPassengerTrain(i);
+							printTicketClassObj.printPassengerTrain(PassengerTrainObj);
 						}
+							
 						System.out.println();
 						do
 						{
@@ -62,12 +59,12 @@ public class MainReservation {
 							/* Displaying list of passenger trains for specified source and destination */
 							System.out.println("Train Details: ");
 							System.out.println("Train No\tTrain Name\tSource\tDestination\tFare\tTime\tDuration\tAvailable Seats\n");
-							for(int i = 0; i < listLength; i++)
+							for(PassengerTrain PassengerTrainObj : TrainInfo.passengerTrainList)
 							{
 			
-								if(TrainInfo.passengerTrainList.get(i).getSource().equalsIgnoreCase(sourceStation) && TrainInfo.passengerTrainList.get(i).getDestination().equalsIgnoreCase(destinationStation))
+								if(PassengerTrainObj.getSource().equalsIgnoreCase(sourceStation) && PassengerTrainObj.getDestination().equalsIgnoreCase(destinationStation))
 								{
-									printTicketClassObj.printPassengerTrain(i);
+									printTicketClassObj.printPassengerTrain(PassengerTrainObj);
 									countInput++;
 								}
 							}
@@ -97,13 +94,11 @@ public class MainReservation {
 					else if(trainType == 2)
 					{
 						
-						/* listLength will contain size of passenger train list */
-						int listLength = TrainInfo.goodsTrainList.size();
 						/* displaying list of goods trains */
 						System.out.println("Train No\tTrain Name\tSource\tDestination\tFare\tTime\tDuration\tAvailable Weight(in tons)\n");
-						for( int i = 0; i < listLength; i++)
+						for(GoodsTrain goodsTrainObj : TrainInfo.goodsTrainList)
 						{
-							printTicketClassObj.printGoodsTrain(i);
+							printTicketClassObj.printGoodsTrain(goodsTrainObj);
 						}
 						System.out.println();
 						do
@@ -117,12 +112,11 @@ public class MainReservation {
 							/* Displaying list of goods trains for specified source and destination */
 							System.out.println("Train Details: ");
 							System.out.println("Train No\tTrain Name\tSource\tDestination\tFare\tTime\tDuration\tAvailable Weight(in tons)\n");
-							for(int i = 0; i < listLength; i++)
+							for(GoodsTrain goodsTrainObj : TrainInfo.goodsTrainList)
 							{
-			
-								if(TrainInfo.goodsTrainList.get(i).getSource().equalsIgnoreCase(sourceStation) && TrainInfo.goodsTrainList.get(i).getDestination().equalsIgnoreCase(destinationStation))
+								if(goodsTrainObj.getSource().equalsIgnoreCase(sourceStation) && goodsTrainObj.getDestination().equalsIgnoreCase(destinationStation))
 								{
-									printTicketClassObj.printPassengerTrain(i);
+									printTicketClassObj.printGoodsTrain(goodsTrainObj);
 									countInput++;
 								}
 							}
@@ -169,7 +163,6 @@ public class MainReservation {
 					else if(result == 1)
 					{
 						System.out.println("Requirement is higher than availability");
-						int listLength = TrainInfo.passengerTrainList.size();
 						
 						/* Showing list of trains with available seats more than or equal to requirement */
 						if(trainType == 1)
@@ -177,13 +170,13 @@ public class MainReservation {
 				
 							System.out.println("Available trains on this route with required availability");
 							System.out.println("Train No\tTrain Name\tSource\tDestination\tFare\tTime\tDuration\tAvailable Seats\n");
-							for( int i = 0; i < listLength; i++)
+							for(PassengerTrain passengerTrainObj : TrainInfo.passengerTrainList)
 							{
-								if(TrainInfo.passengerTrainList.get(i).getSource() == sourceStation && TrainInfo.passengerTrainList.get(i).getDestination() == destinationStation)
+								if(passengerTrainObj.getSource().equalsIgnoreCase(sourceStation) && passengerTrainObj.getDestination().equalsIgnoreCase(destinationStation))
 								{
-									if(TrainInfo.passengerTrainList.get(i).getAvailableSeats() >= noOfSeats)
+									if(passengerTrainObj.getAvailableSeats() >= noOfSeats)
 									{
-										printTicketClassObj.printPassengerTrain(i);
+										printTicketClassObj.printPassengerTrain(passengerTrainObj);
 									}
 								}
 							}
@@ -194,13 +187,13 @@ public class MainReservation {
 							
 							System.out.println("Available trains on this route with required availability");
 							System.out.println("Train No\tTrain Name\tSource Station\tDestination Station\tFare\tTime\tDuration\tAvailable Weight(in tons)\n");
-							for( int i = 0; i < listLength; i++)
+							for(GoodsTrain goodsTrainObj : TrainInfo.goodsTrainList)
 							{
-								if(TrainInfo.goodsTrainList.get(i).getSource() == sourceStation && TrainInfo.goodsTrainList.get(i).getDestination() == destinationStation)
+								if(goodsTrainObj.getSource().equalsIgnoreCase(sourceStation) && goodsTrainObj.getDestination().equalsIgnoreCase(destinationStation))
 								{
-									if(TrainInfo.goodsTrainList.get(i).getAvailableWeight() >= weight)
+									if(goodsTrainObj.getAvailableWeight() >= weight)
 									{
-										printTicketClassObj.printGoodsTrain(i);
+										printTicketClassObj.printGoodsTrain(goodsTrainObj);
 									}
 								}
 							}
@@ -278,20 +271,17 @@ public class MainReservation {
 						while(true);
 							String time = "";
 							double amount = 0.0;
-							int listLengthPassenger = 0, listLengthGoods = 0;
-							listLengthGoods = TrainInfo.goodsTrainList.size();
 							
 							/* ticket of passenger train */
 							if(trainType == 1)
 							{
-								listLengthPassenger = TrainInfo.passengerTrainList.size();
-								for( int i = 0; i < listLengthPassenger; i++)
+								for(PassengerTrain passengerTrainObj : TrainInfo.passengerTrainList)
 								{
-									if(TrainInfo.passengerTrainList.get(i).getTrainNo() == trainNo)
+									if(passengerTrainObj.getTrainNo() == trainNo)
 									{
-										amount = (TrainInfo.passengerTrainList.get(i).getFare()) * noOfSeats;
-										time = TrainInfo.passengerTrainList.get(i).getTime();
-										TrainInfo.passengerTrainList.get(i).setAvailableSeats(TrainInfo.passengerTrainList.get(i).getAvailableSeats() - noOfSeats);
+										amount = (passengerTrainObj.getFare()) * noOfSeats;
+										time = passengerTrainObj.getTime();
+										passengerTrainObj.setAvailableSeats(passengerTrainObj.getAvailableSeats() - noOfSeats);
 									}
 									
 								} 
@@ -302,16 +292,15 @@ public class MainReservation {
 							}
 							
 							/* ticket of goods train */
-							else
+							else if(trainType == 2)
 							{
-								listLengthGoods = TrainInfo.goodsTrainList.size();
-								for( int i = 0; i < listLengthGoods; i++)
+								for(GoodsTrain goodsTrainObj : TrainInfo.goodsTrainList)
 								{
-									if(TrainInfo.goodsTrainList.get(i).getTrainNo() == trainNo)
+									if(goodsTrainObj.getTrainNo() == trainNo)
 									{
-										amount = (TrainInfo.goodsTrainList.get(i).getFare()) * weight;
-										time = TrainInfo.goodsTrainList.get(i).getTime();
-										TrainInfo.goodsTrainList.get(i).setAvailableWeight(TrainInfo.goodsTrainList.get(i).getAvailableWeight() - weight);
+										amount = (goodsTrainObj.getFare()) * weight;
+										time = goodsTrainObj.getTime();
+										goodsTrainObj.setAvailableWeight(goodsTrainObj.getAvailableWeight() - weight);
 									}
 									
 								} 
@@ -324,10 +313,12 @@ public class MainReservation {
 							/* Printing train list with updated data */
 							System.out.println("\n\nUpdated Train Chart is: \n");
 							System.out.println("Train No\tTrain Name\tSource\tDestination\tFare\tTime\tDuration\tAvailable Seats\n");
-							for(int i = 0; i < listLengthPassenger; i++)
-								printTicketClassObj.printPassengerTrain(i);
-							for(int i = 0; i < listLengthGoods; i++)
-								printTicketClassObj.printGoodsTrain(i);
+							for(PassengerTrain passengerTrainObj : TrainInfo.passengerTrainList)
+								printTicketClassObj.printPassengerTrain(passengerTrainObj);
+							System.out.println();
+							System.out.println("Train No\tTrain Name\tSource\tDestination\tFare\tTime\tDuration\tAvailable Weight\n");
+							for(GoodsTrain goodsTrainObj : TrainInfo.goodsTrainList)
+								printTicketClassObj.printGoodsTrain(goodsTrainObj);
 						}
 				}
 				while(choice.charAt(0) == 'y' || choice.charAt(0) == 'Y');
