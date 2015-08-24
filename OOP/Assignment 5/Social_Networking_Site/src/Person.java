@@ -3,7 +3,6 @@ public class Person extends Entity {
 
 	private String schoolName;
 	private String collegeName;
-	//private Set<String> interest = new HashSet<String>();
 	
 	/** Parameterized Constructor 
 	 * 

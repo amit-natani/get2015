@@ -45,6 +45,18 @@ public class MainSocialNetwork {
 						case 3:
 							person1 = new Person("eng.amitnatani1993@gmail.com","Amit Natani", "8559818925","JVM","SBTC");
 							result = socialNetworkObj.addNode(person1);
+							if(result == 0)
+							{
+								System.out.println("Exception occured");
+							}
+							else if(result == -1)
+							{
+								System.out.println("node can not be added, already exists");
+							}
+							else
+							{
+								System.out.println("Node is added successfully");
+							}
 							break;
 						
 						/* adding an edge */
@@ -52,7 +64,11 @@ public class MainSocialNetwork {
 							person2 = new Person("amitnatani@gmail.com","Amit Sharma", "9587935478","AVM","MIET");
 							result = socialNetworkObj.addNode(person2);
 							result = socialNetworkObj.addEdge(person1, person2);
-							if(result == 1)
+							if(result == 0)
+							{
+								System.out.println("Exception Occured");
+							}
+							else if(result == 1)
 							{
 								System.out.println("Edge Successfully Added");
 							}
@@ -75,6 +91,7 @@ public class MainSocialNetwork {
 						/* removing an edge between two nodes */
 						case 7:
 							socialNetworkObj.removeEdge(person1, person2);
+							break;
 							
 						/* Exit */
 						case 8:

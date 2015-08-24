@@ -3,7 +3,6 @@ public class Organisation extends Entity{
 
 	private int numberOfCoursesOffered;
 	private int numberOfPlacements;
-	//private Set<String> interest = new HashSet<String>();
 	
 	/** Parameterized Constructor
 	 * 

@@ -5,7 +5,6 @@ import java.util.Set;
 public class Graph {
 
 	public static Set<Entity> nodeSet = new HashSet<Entity>();
-	//HashMap<Entity, Set<Entity>> mapNodeToList = new HashMap<Entity, Set<Entity>>();
 	/** Method to add a node in graph 
 	 * @param node
 	 * @return 1 if the node is added successfully
@@ -13,21 +12,29 @@ public class Graph {
 	 */
 	int addNode(Node node)
 	{
-		Entity entity = (Entity)node;
-		Iterator<Entity> iteratorNodeSet = nodeSet.iterator(); 
-		while(iteratorNodeSet.hasNext())
+		try
 		{
-			if(iteratorNodeSet.next().getEmailId().equals(entity.getEmailId()))
+			Entity entity = (Entity)node;
+			Iterator<Entity> iteratorNodeSet = nodeSet.iterator(); 
+			while(iteratorNodeSet.hasNext())
 			{
-				return -1;
+				if(iteratorNodeSet.next().getEmailId().equals(entity.getEmailId()))
+				{
+					return -1;
+				}
 			}
+			if(entity instanceof Person)
+				SocialNetwork.personSet.add((Person)entity);
+			else
+				SocialNetwork.organisationSet.add((Organisation)entity);
+			nodeSet.add(entity);
+			return 1;
 		}
-		if(entity instanceof Person)
-			SocialNetwork.personSet.add((Person)entity);
-		else
-			SocialNetwork.organisationSet.add((Organisation)entity);
-		nodeSet.add(entity);
-		return 1;
+		catch(Exception e)
+		{
+			System.out.println(e.getMessage());
+			return 0;
+		}
 	}
 	
 	/** Method to remove a node from the network 
@@ -35,20 +42,27 @@ public class Graph {
 	 */
 	void removeNode(Node nodeToRemove)
 	{
-		Entity entityToRemove = (Entity)nodeToRemove;
-		Iterator<Entity> iteratorNodeSet = nodeSet.iterator();
-		while(iteratorNodeSet.hasNext())
+		try
 		{
-			Entity entity = iteratorNodeSet.next();
-			if(entity.getEmailId().equals(entityToRemove.getEmailId())) {
-				
-				removeFriends(entityToRemove);
-				nodeSet.remove(entityToRemove);
-				if(entityToRemove instanceof Person)
-					SocialNetwork.personSet.remove((Person)entityToRemove);
-				else
-					SocialNetwork.organisationSet.remove((Organisation)entityToRemove);
+			Entity entityToRemove = (Entity)nodeToRemove;
+			Iterator<Entity> iteratorNodeSet = nodeSet.iterator();
+			while(iteratorNodeSet.hasNext())
+			{
+				Entity entity = iteratorNodeSet.next();
+				if(entity.getEmailId().equals(entityToRemove.getEmailId())) {
+					
+					removeFriends(entityToRemove);
+					nodeSet.remove(entityToRemove);
+					if(entityToRemove instanceof Person)
+						SocialNetwork.personSet.remove((Person)entityToRemove);
+					else
+						SocialNetwork.organisationSet.remove((Organisation)entityToRemove);
+				}
 			}
+		}
+		catch(Exception e)
+		{
+			System.out.println(e.getMessage());
 		}
 	}
 	
@@ -80,28 +94,30 @@ public class Graph {
 	 */
 	int addEdge(Node node1, Node node2)
 	{
-		Entity entity1 = (Entity)node1;
-		Entity entity2 = (Entity)node2;
-		boolean flag1 = false;
-		boolean flag2 = false;
-		boolean flag3 = false;
-		Iterator<Entity> iteratorNodeSet = nodeSet.iterator();
-		
-		while(iteratorNodeSet.hasNext())
+		try
 		{
+			Entity entity1 = (Entity)node1;
+			Entity entity2 = (Entity)node2;
+			boolean flag1 = false;
+			boolean flag2 = false;
+			boolean flag3 = false;
+			Iterator<Entity> iteratorNodeSet = nodeSet.iterator();
 			
-			Entity entityTemp = iteratorNodeSet.next();
-			if(entityTemp.getEmailId().equals(entity1.getEmailId()))
+			while(iteratorNodeSet.hasNext())
 			{
 				
-				flag1 = true;
+				Entity entityTemp = iteratorNodeSet.next();
+				if(entityTemp.getEmailId().equals(entity1.getEmailId()))
+				{
+					
+					flag1 = true;
+				}
+				if(entityTemp.getEmailId().equals(entity2.getEmailId()))
+				{
+					
+					flag2 = true;
+				}
 			}
-			if(entityTemp.getEmailId().equals(entity2.getEmailId()))
-			{
-				
-				flag2 = true;
-			}
-		}
 			if(flag1 && flag2)
 			{
 				Iterator<Entity> itr = entity1.setFriends.iterator();
@@ -125,6 +141,12 @@ public class Graph {
 			{
 				return -1;
 			}
+		}
+		catch(Exception e)
+		{
+			System.out.println(e.getMessage());
+			return 0;
+		}
 	}
 	
 	/** Method to remove an existing edge between two nodes
@@ -133,23 +155,30 @@ public class Graph {
 	 */
 	void removeEdge(Node node1, Node node2)
 	{
-		Entity entity1 = (Entity)node1;
-		Entity entity2 = (Entity)node2;
-		Iterator<Entity> iteratorFriends = entity1.setFriends.iterator();
-		while(iteratorFriends.hasNext())
+		try
 		{
-			if(iteratorFriends.next().getEmailId().equals(entity2.getEmailId()))
+			Entity entity1 = (Entity)node1;
+			Entity entity2 = (Entity)node2;
+			Iterator<Entity> iteratorFriends = entity1.setFriends.iterator();
+			while(iteratorFriends.hasNext())
 			{
-				entity1.setFriends.remove(entity2);
+				if(iteratorFriends.next().getEmailId().equals(entity2.getEmailId()))
+				{
+					entity1.setFriends.remove(entity2);
+				}
+			}
+			iteratorFriends = entity2.setFriends.iterator();
+			while(iteratorFriends.hasNext())
+			{
+				if(iteratorFriends.next().getEmailId().equals(entity1.getEmailId()))
+				{
+					entity2.setFriends.remove(entity1);
+				}
 			}
 		}
-		iteratorFriends = entity2.setFriends.iterator();
-		while(iteratorFriends.hasNext())
+		catch(Exception e)
 		{
-			if(iteratorFriends.next().getEmailId().equals(entity1.getEmailId()))
-			{
-				entity2.setFriends.remove(entity1);
-			}
+			System.out.println(e.getMessage());
 		}
 	}
 	
@@ -159,20 +188,27 @@ public class Graph {
 	 */
 	void removeFriends(Entity entity)
 	{
-		Iterator<Entity> iteratorNodeSet = nodeSet.iterator();
-		
-		while(iteratorNodeSet.hasNext())
+		try
 		{
-			Entity entityTemp = iteratorNodeSet.next();
-			Iterator<Entity> itrFriends = entityTemp.setFriends.iterator();
-			while(itrFriends.hasNext())
+			Iterator<Entity> iteratorNodeSet = nodeSet.iterator();
+			
+			while(iteratorNodeSet.hasNext())
 			{
-				
-				if(itrFriends.next().getEmailId().equals(entity.getEmailId()))
+				Entity entityTemp = iteratorNodeSet.next();
+				Iterator<Entity> itrFriends = entityTemp.setFriends.iterator();
+				while(itrFriends.hasNext())
 				{
-					entityTemp.setFriends.remove(entity);
+					
+					if(itrFriends.next().getEmailId().equals(entity.getEmailId()))
+					{
+						entityTemp.setFriends.remove(entity);
+					}
 				}
 			}
+		}
+		catch(Exception e)
+		{
+			System.out.println(e.getMessage());
 		}
 	}
 	
