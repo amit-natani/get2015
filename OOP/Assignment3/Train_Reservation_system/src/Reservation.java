@@ -14,13 +14,12 @@ public class Reservation {
 		int count = -1;
 		
 		/* listLength will contain the size of list of passenger train */ 
-		int listLength = TrainInfo.passengerTrainList.size();
-		for(int i = 0; i < listLength; i++)
+		for(PassengerTrain PassengerTrainObj : TrainInfo.passengerTrainList)
 		{	 
 			/* Checking if the train No that user has input is available or not */
-			if(TrainInfo.passengerTrainList.get(i).getTrainNo() == trainNo)
+			if(PassengerTrainObj.getTrainNo() == trainNo)
 			{
-				count = i;
+				count++;
 				break;
 			}
 		}
@@ -46,12 +45,11 @@ public class Reservation {
 	public int checkAvailabilityGoodsTrain(int trainNo, double weight)
 	{
 		int count = -1;
-		int listLength = TrainInfo.goodsTrainList.size();
-		for(int i = 0; i < listLength; i++)
+		for(GoodsTrain goodsTrainObj : TrainInfo.goodsTrainList)
 		{
-			if(TrainInfo.goodsTrainList.get(i).getTrainNo() == trainNo)
+			if(goodsTrainObj.getTrainNo() == trainNo)
 			{
-				count = i;
+				count++;
 				break;
 			}
 		}

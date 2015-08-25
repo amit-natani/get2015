@@ -19,7 +19,7 @@ public class TrainInfo
 		BufferedReader bufferedReaderObj;
 		try
 		{
-			bufferedReaderObj = new BufferedReader(new FileReader(Constants.PASSENGERTRAINFILE));
+			bufferedReaderObj = new BufferedReader(new FileReader(Constants.passengerFile.getAbsolutePath()));
 			String line;
 			/* Reading line by line details of Passenger Trains */
 			while((line = bufferedReaderObj.readLine()) != null)
@@ -34,7 +34,6 @@ public class TrainInfo
 		}
 		catch(Exception e)
 		{
-			e.printStackTrace();
 			System.out.println(e.getMessage());
 		}
 	}
@@ -48,7 +47,7 @@ public class TrainInfo
 		BufferedReader bufferedReaderObj;
 		try
 		{
-			bufferedReaderObj = new BufferedReader(new FileReader(Constants.GOODSTRAINFILE));
+			bufferedReaderObj = new BufferedReader(new FileReader(Constants.goodsFile.getAbsolutePath()));
 			String line;
 			/* Reading line by line details of Passenger Trains */
 			while((line = bufferedReaderObj.readLine()) != null)
@@ -63,7 +62,6 @@ public class TrainInfo
 		}
 		catch(Exception e)
 		{
-			e.printStackTrace();
 			System.out.println(e.getMessage());
 		}
 	}

@@ -1,5 +1,7 @@
+import java.io.File;
+
 
 public class Constants {
-	final static String PASSENGERTRAINFILE = "E:\\PassengerTrain.txt";
-	final static String GOODSTRAINFILE = "E:\\GoodsTrain.txt";
+	static final File passengerFile = new File("PassengerTrain.txt");
+	static final File goodsFile = new File("GoodsTrain.txt");
 }
