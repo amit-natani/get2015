@@ -22,8 +22,8 @@ public class Main {
 			{
 				/* Printing Menu */
 				System.out.println("Menu: ");
-				System.out.println("Press 1 to enqueue an element");
-				System.out.println("Press 2 to dequeue");
+				System.out.println("Press 1 to Insert a name in queue");
+				System.out.println("Press 2 to remove front element from the queue");
 				System.out.println("Press 3 make the queue empty");
 				System.out.println("Press 4 to get front Element of queue");
 				System.out.println("Press 5 to display queue");
