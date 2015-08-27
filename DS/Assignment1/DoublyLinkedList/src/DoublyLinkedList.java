@@ -45,7 +45,6 @@ public class DoublyLinkedList {
 	{
 		if( location < count )
 		{
-			System.out.println("Hello");
 			DoublyLinkedList newNode = new DoublyLinkedList();
 			newNode.nodeValue = item;
 			int i;
@@ -170,16 +169,23 @@ public class DoublyLinkedList {
 	/** Method to remove a linked list */
 	public void reverse()
 	{
-		DoublyLinkedList tempNode1 = first, tempNode2 = null, tempNode3;
-		while( tempNode1 != null )
+		try
 		{
-			tempNode3 = tempNode2;
-			tempNode2 = tempNode1;
-			tempNode1 = tempNode1.next;
-			tempNode2.next = tempNode3;
-			tempNode2.previous = tempNode1;
+			DoublyLinkedList tempNode1 = first, tempNode2 = null, tempNode3;
+			while( tempNode1 != null )
+			{
+				tempNode3 = tempNode2;
+				tempNode2 = tempNode1;
+				tempNode1 = tempNode1.next;
+				tempNode2.next = tempNode3;
+				tempNode2.previous = tempNode1;
+			}
+			first = tempNode2;
 		}
-		first = tempNode2;
+		catch(Exception e)
+		{
+			System.out.println(e.getMessage());
+		}
 	} 
 	
 	/** Method to sort a linked list */
@@ -210,24 +216,31 @@ public class DoublyLinkedList {
 	 */
 	public void display()
 	{
-		DoublyLinkedList currNode = first;
-		System.out.print("\n Linked list is : ");
-		
-		/* Displaying in forward direction */
-		while( currNode.next != null )
+		try
 		{
-			System.out.print(currNode.nodeValue+" ");
-			currNode = currNode.next;
+			DoublyLinkedList currNode = first;
+			System.out.print("\n Linked list is : ");
+			
+			/* Displaying in forward direction */
+			while( currNode.next != null )
+			{
+				System.out.print(currNode.nodeValue+" ");
+				currNode = currNode.next;
+			}
+			System.out.print(currNode.nodeValue);
+			System.out.print("\n Linked list is : ");
+			
+			/* Displaying in reverse direction */
+			while(currNode.previous != null )				
+			{
+				System.out.print(currNode.nodeValue+" ");
+				currNode = currNode.previous;
+			}
+			System.out.print(currNode.nodeValue);
 		}
-		System.out.print(currNode.nodeValue);
-		System.out.print("\n Linked list is : ");
-		
-		/* Displaying in reverse direction */
-		while(currNode.previous != null )				
+		catch(Exception e)
 		{
-			System.out.print(currNode.nodeValue+" ");
-			currNode = currNode.previous;
+			System.out.println(e.getMessage());
 		}
-		System.out.print(currNode.nodeValue);
 	}
 }
