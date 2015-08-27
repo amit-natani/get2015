@@ -118,6 +118,7 @@ public class Main {
 					repeatChoice = scan.nextInt();
 					
 			} while(repeatChoice == 1);
+			scan.close();
 			
 		}
 		catch(Exception e)
@@ -129,7 +130,7 @@ public class Main {
 			System.out.println("System Exited");
 			System.exit(0);
 		}
-		scan.close();
+	
 	}
 
 }
