@@ -10,7 +10,11 @@ public class CollegeCounselling extends Queue {
 	
 	/* List of 6 colleges */
 	String[] collegeList = {"SBTC", "JECRC", "MIT", "PIT", "PCE", "Bhawani"}; 
-	int[] seatsInColleges = {5, 4, 7, 9, 5, 8};		
+	int[] seatsInColleges = {5, 4, 7, 9, 5, 8};
+	
+	/** Method to accompalish Counselling procedure.
+	 * @param numberOfStudents : total number of students participating in counselling
+	 * /
 	public void counselling(int numberOfStudents)
 	{
 		Scanner scan =  null;
