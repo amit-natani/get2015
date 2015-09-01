@@ -68,7 +68,7 @@ public class LinkedListMain {
 							scan.next();
 						}
 						number = scan.nextInt();
-						linked_List_OperationsObj.insert(0, number, linkedList);
+						linked_List_OperationsObj.insert(number, linkedList);
 						break;
 						
 					/* if choice is 2, then the linked list will be displayed */
