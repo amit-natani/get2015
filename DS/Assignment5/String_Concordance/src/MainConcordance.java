@@ -1,4 +1,6 @@
-
+/**
+ * Program to find concordance of characters in a given string through Command Line.
+ */
 import java.util.Map;
 
 /**
