@@ -28,6 +28,7 @@ public class NaturalOrderSorting {
 		Collections.sort(employeeList);
 		
 		/* Displaying Employees in sorted order of employeeID */
+		System.out.println("Sorted Employee List based on Natural Order of Employee Id: ");
 		for(Employee e: employeeList) {
 			System.out.println(e.getEmployeeId()+"\t"+e.getEmployeeName()+"\t"+e.getEmployeeAddress());
 		}

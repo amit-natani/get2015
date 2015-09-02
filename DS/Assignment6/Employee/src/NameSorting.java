@@ -7,6 +7,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * @author Amit
+ */
+
 public class NameSorting extends Employee{
 
 	public static void main(String[] args) {
@@ -25,6 +29,7 @@ public class NameSorting extends Employee{
 		Collections.sort(employeeList, new NameComparator());
 		
 		/* Displaying Employees in sorted order of name */
+		System.out.println("Sorted Employee List based on Employee Name: ");
 		for(Employee e: employeeList) {
 			System.out.println(e.getEmployeeId()+"\t"+e.getEmployeeName()+"\t"+e.getEmployeeAddress());
 		}

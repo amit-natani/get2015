@@ -25,7 +25,8 @@ public class UniqueEmployeeId extends Employee{
 		employeeSet.add(new Employee(105, "Gaurav", "Sitapura"));
 		employeeSet.add(new Employee(103, "Amit", "Jhotwara"));
 
-		/* Displaying quique Employees stored in employeeSet */
+		/* Displaying unique Employees stored in employeeSet */
+		System.out.println("Unique Employees are :");
 		for(Employee e: employeeSet) {
 			System.out.println(e.getEmployeeId()+"\t"+e.getEmployeeName()+"\t"+e.getEmployeeAddress());
 		}
