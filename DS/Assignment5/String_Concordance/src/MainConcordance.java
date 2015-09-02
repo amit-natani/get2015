@@ -10,6 +10,10 @@ public class MainConcordance {
 	public static void main(String args[]) {
 		try
 		{
+			if(args.length == 0) {
+				System.out.println("String is Empty");
+				System.exit(0);
+			}
 			/* Initialization */
 			String inputString = "";
 			Concordance concordanceObj = new Concordance();
