@@ -5,8 +5,7 @@ public class BinarySearch {
 	 * 
 	 * @param itemArray : Array in which item is to be searched
 	 * @param searchNumber : element to be searched
-	 * @param lowerBound : lower bound
-	 * @param upperBound : upper bound
+	 * @param choice : choice of user(1 for leftmost, 2 for rightmost)
 	 * @return Returns index of the leftmost occurence of the element in the array,
 	 * if the element is not fount then it returns -1
 	 */
