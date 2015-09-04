@@ -90,7 +90,12 @@ public class Queue_Implementation {
 					
 					/* If choice is 5, then queue will be cleared */
 					case 5:
+						if(queueList.size() == 0) {
+							System.out.println("Queue is already Empty");
+							break;
+						}
 						queueList.clear();
+						System.out.println("Queue is cleared");
 						break;
 						
 					/* If choice is 6, then system will be exit */
@@ -111,3 +116,4 @@ public class Queue_Implementation {
 		}
 	}
 }
+
