@@ -113,9 +113,10 @@ public class Stack<Object> {
 		
 		/* Traversing each node and printing the node value */
 		while (current != null) {
-			System.out.println(current.value);
+			System.out.print(current.value + "\t");
 			current = current.next;
 		}
+		System.out.println();
 	}
 	
 	@SuppressWarnings("unchecked")
