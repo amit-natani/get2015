@@ -10,11 +10,7 @@ public class CollegeCounselling extends Queue {
 	
 	/* List of 6 colleges */
 	String[] collegeList = {"SBTC", "JECRC", "MIT", "PIT", "PCE", "Bhawani"}; 
-	int[] seatsInColleges = {5, 4, 7, 9, 5, 8};
-	
-	/** Method to accompalish Counselling procedure.
-	 * @param numberOfStudents : total number of students participating in counselling
-	 * /
+	int[] seatsInColleges = {5, 4, 7, 9, 5, 8};		
 	public void counselling(int numberOfStudents)
 	{
 		Scanner scan =  null;
@@ -25,24 +21,13 @@ public class CollegeCounselling extends Queue {
 			String nameOfStudent;
 			scan = new Scanner(System.in);
 			bufferedReaderObj = new BufferedReader(new InputStreamReader(System.in));
-			System.out.print("\n Enter number of students eligible for counseling : ");
-			
-			/* Inputting number of students from user */
-			do {// Validation
-				System.out.println("(Enter Positive Number(Greater than zero)");
-				while (!scan.hasNextInt()) {
-				System.out.println("That's not a number!Please enter again");
-				scan.next(); // this is important!
-				}
-				numberOfStudents = scan.nextInt();
-				} while (numberOfStudents <= 0);	
 			
 			for(int i = 0; i < numberOfStudents; i++)
 			{
 				/* Entering Student Names according to rank*/
 				
 				while(true) {
-					System.out.println("Enter "+ (i+1)+" Student Name : ");
+					System.out.println("Enter Student Name with rank: " + (i + 1));
 					nameOfStudent = bufferedReaderObj.readLine();
 					if(Validation.isName(nameOfStudent))
 						break;
@@ -65,7 +50,7 @@ public class CollegeCounselling extends Queue {
 				nameOfStudent = (String)getFront();		
 				System.out.print("\n Select any college from above colleges for "+nameOfStudent+" : ");
 				do {// Validation
-					System.out.println("(Enter Positive Number(Greater than zero and Less than "+collegeList.length+")");
+					System.out.println("(Enter Positive Number(Greater than zero and Less than "+(collegeList.length+1)+")");
 					while (!scan.hasNextInt()) {
 					System.out.println("That's not a number!Please enter again");
 					scan.next(); // this is important!
@@ -78,7 +63,7 @@ public class CollegeCounselling extends Queue {
 				/* If seats are full in college */
 				if( seatsInColleges[collegeNumber-1] == 0 ) 
 				{
-					System.out.print("\n e....\n Try again in next round!!! ");
+					System.out.print("\n Seats are full in this college\n Try again in next round!!! ");
 				}
 				/* if Seats are available */
 				else		
@@ -87,6 +72,8 @@ public class CollegeCounselling extends Queue {
 					seatsInColleges[collegeNumber-1]--;
 				}
 			}
+			System.out.println("\nCounselling Over\nSystem Closed");
+			System.exit(0);
 			scan.close();
 		}
 		catch(Exception e)
@@ -95,3 +82,4 @@ public class CollegeCounselling extends Queue {
 		}
 	}
 }
+
