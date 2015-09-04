@@ -9,6 +9,7 @@ public class Main {
 		BinaryTree binaryTreeObj1 = null;
 		BinaryTree binaryTreeObj2 = null;
 		Scanner scan = null;
+		boolean flag = false;
 		
 		try
 		{
@@ -52,8 +53,10 @@ public class Main {
 							count = scan.nextInt();		// taking input number of elements in count
 							} while (count < 0);
 						/* If count is zero then elements are not taken as input */
-						if(count == 0)
+						if(count == 0) {
+							System.out.println("Number of elements should be at least 1");
 							break;
+						}
 						System.out.println("enter " + count + " numbers.");
 						for (int i = 0; i < count; i++) {
 							while (!scan.hasNextInt()) {
@@ -63,11 +66,15 @@ public class Main {
 							number = scan.nextInt();	// taking elements as input
 							binaryTreeObj1.insert(number);
 						}
+						flag = true;
 						break;
 				
 						/* Case for preorder traversal */
 					case 2:
-						
+						if(flag == false) {
+							System.out.println("First insert element into tree");
+							break;
+						}
 						/* Clearing preorderList */
 						BinaryTree.preorderList.clear();
 						
@@ -87,6 +94,10 @@ public class Main {
 						/* Case for postorder traversal */
 					case 3:
 						
+						if(flag == false) {
+							System.out.println("First insert element into tree");
+							break;
+						}
 						/* Clearing preorderList */
 						BinaryTree.preorderList.clear();
 						
@@ -106,6 +117,10 @@ public class Main {
 						 * both the trees are mirror image or not */
 					case 4:
 						
+						if(flag == false) {
+							System.out.println("First insert element into first tree");
+							break;
+						}
 						/* Clearing preorderList */
 						BinaryTree.preorderList.clear();
 						
