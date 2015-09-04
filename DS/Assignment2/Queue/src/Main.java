@@ -31,7 +31,7 @@ public class Main {
 				System.out.println("Press 7 to exit");
 				
 				do {// Validation
-					System.out.println("(Enter Positive Number)");
+					System.out.println("(Enter Positive Number greater than zero)");
 					while (!scan.hasNextInt()) {
 					System.out.println("That's not a number!Please enter again");
 					scan.next(); // this is important!
@@ -84,7 +84,7 @@ public class Main {
 						break;
 					
 					case 6:
-						System.out.print("\n Enter number of students eligible for counseling : ");
+						System.out.print("Enter number of students eligible for counseling : ");
 						
 						/* Inputting number of students from user */
 						do {// Validation
@@ -93,7 +93,7 @@ public class Main {
 							System.out.println("That's not a number!Please enter again");
 							scan.next(); // this is important!
 							}
-							numberOfStudents = scan.nextInt();
+								numberOfStudents = scan.nextInt();
 							} while (numberOfStudents <= 0);	
 						CollegeCounselling counseling = new CollegeCounselling();
 						counseling.counselling(numberOfStudents);
@@ -109,11 +109,10 @@ public class Main {
 
 				} 
 				System.out.println("Do you want to continue press 1 for YES and any other number for NO");
-	
 					System.out.println("Enter Positive Number");
 					while (!scan.hasNextInt()) {
-					System.out.println("That's not a number!Please enter again");
-					scan.next(); // this is important!
+						System.out.println("That's not a number!Please enter again");
+						scan.next(); // this is important!
 					}
 					repeatChoice = scan.nextInt();
 					
@@ -130,8 +129,10 @@ public class Main {
 			System.out.println("System Exited");
 			System.exit(0);
 		}
-	
+
 	}
 
 }
+
+
 
