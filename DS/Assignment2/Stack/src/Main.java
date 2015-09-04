@@ -116,7 +116,7 @@ public class Main {
 						}
 						else
 						{
-							System.out.println(postfix);
+							System.out.println("PostFix Expression is: " + postfix);
 						}
 						break;
 					
