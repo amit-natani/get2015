@@ -7,6 +7,8 @@ public class Validation {
 	 */
 	public static boolean isName(String name) 
 	{
+	    if(name.trim().length() == 0)
+			return false;
 	    char[] chars = name.toCharArray();
 
 	    for (char c : chars) 
