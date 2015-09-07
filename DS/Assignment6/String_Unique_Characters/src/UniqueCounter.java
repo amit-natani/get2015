@@ -24,11 +24,19 @@ public class UniqueCounter {
 	 */
 	public Integer countUniqueCharacters(String inputString) {
 		
+		/* condition to check whether the input string is null or not */
+		if(inputString == null) 
+			return -1;
+		
+		/* condition to check whether the input string is blank or not */
+		else if(inputString.length() == 0)
+			return 0;
+		
 		/** characterSet will hold unique characters of the given string */
 		Set<Character> characterSet = new HashSet<Character>();
 		
 		/* condition to check whether the given string is already in the cache or not.
-		 * and if string is already exits then number of unique characters in that srting
+		 * and if string is already exits then number of unique characters in that string
 		 * is directly returned */
 		if(cache.containsKey(inputString)) {
 			return cache.get(inputString);
@@ -38,7 +46,7 @@ public class UniqueCounter {
 			char[] charArray = inputString.toCharArray();
 			
 			/* character array is traversed using for each loop
-			 * and charaters are added to characterSet (Repeated characters
+			 * and characters are added to characterSet (Repeated characters
 			 * will not be stored)
 			 */
 			for(char c : charArray)
@@ -51,7 +59,7 @@ public class UniqueCounter {
 			/* the input string and number of unique characters in it are put to hashMap cache */
 			cache.put(inputString, size);
 			
-			/* size of characterSet is returnd as numebr of unique characters */
+			/* size of characterSet is returned as number of unique characters */
 			return size;
 		}
 	}

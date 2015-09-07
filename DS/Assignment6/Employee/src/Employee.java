@@ -1,5 +1,5 @@
 /**
- * This class is responsible to create and manipulate data of Em-ployees
+ * This class is responsible to create and manipulate data of Employees
  */
 import java.util.Comparator;
 
@@ -72,7 +72,7 @@ public class Employee implements Comparable<Employee> {
 		return employeeAddress;
 	}
 	
-	/** Method to set Adress of particular employee
+	/** Method to set Address of particular employee
 	 * 
 	 * @param employeeAddress
 	 */
@@ -118,7 +118,7 @@ public class Employee implements Comparable<Employee> {
 		return true;
 	}
 	
-	/** This nested class NameComparator that inplements Comparator interface
+	/** This nested class NameComparator that implements Comparator interface
 	 * compares objects or Employee class according to their names 
 	 */
 	static class NameComparator implements Comparator<Employee> {
@@ -135,6 +135,8 @@ public class Employee implements Comparable<Employee> {
 	 */
 	@Override
 	public int compareTo(Employee employeeObj) {
+		if(employeeObj == null)
+			return -1;
 		return this.getEmployeeId().compareTo(employeeObj.getEmployeeId());
 	}
 }

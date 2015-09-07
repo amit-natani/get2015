@@ -1,11 +1,11 @@
 /**
- * This class extends Employee class and stores uniqie objects of Employee class
+ * This class extends Employee class and stores unique objects of Employee class
  * and remove duplicate employees. Two employees with same employee Id are
  * treated as duplicate Employees. So All the Employee Objects have unique Employee Id.
  */
 
-import java.util.HashSet;
 import java.util.Set;
+import java.util.TreeSet;
 
 /**
  * @author Amit
@@ -16,7 +16,7 @@ public class UniqueEmployeeId extends Employee{
 	public static void main(String[] args) {
 
 		/* employeeSet is a set of employee objects */
-		Set<Employee> employeeSet = new HashSet<Employee>();
+		Set<Employee> employeeSet = new TreeSet<Employee>();
 		
 		/* adding objects to employeeSet */
 		employeeSet.add(new Employee(102, "Sanjay", "Adarsh Nagar"));
