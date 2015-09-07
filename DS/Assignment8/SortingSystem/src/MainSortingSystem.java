@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 
 public class MainSortingSystem {
 
@@ -7,26 +5,17 @@ public class MainSortingSystem {
 		
 		/* Initialization */
 		SortingSystem sortingSystemObj = null;
-		Scanner scan = null;
 		try
 		{
 			/* Instantiation */
-			int numberOfElements, choice;
+			int numberOfElements, choice, repeatChoice;
 			sortingSystemObj = new SortingSystem();
-			scan = new Scanner(System.in);
 			do
 			{
 				System.out.println("Enter Number of Elements to be sorted");
 				
 				/* Inputting number of elements */
-				do {
-					System.out.println("Enter positive integer only");
-					while(!scan.hasNextInt()) {
-						System.out.println("Enter Numebr Only");
-						scan.next();
-					}
-					numberOfElements = scan.nextInt();
-				} while(numberOfElements <= 0);
+				numberOfElements = Validation.isInteger();
 				
 				/* length of array itemArray will be equal to numberOfElements */
 				int[] itemArray = new int[numberOfElements];
@@ -35,37 +24,28 @@ public class MainSortingSystem {
 				for(int i = 0; i < numberOfElements; i++) {
 					System.out.println("Enter Number "+(i+1));
 					do {
-						System.out.println("(Enter positive integer only)");
-						while(!scan.hasNextInt()) {
-							System.out.println("Enter Number Only");
-							scan.next();
-						}
-						itemArray[i] = scan.nextInt();
+						itemArray[i] = Validation.isInteger();
 					} while(itemArray[i] < 0);
 				}
 				
-				/* Taking user's chocie whether he wants to sort using comparision sort
+				/* Taking user's choice whether he wants to sort using comparison sort
 				 * or linear Sort
 				 */
 				System.out.println("Enter choice: ");
-				System.out.println("1. Comparision Sorting");
+				System.out.println("1. Comparison Sorting");
 				System.out.println("2. Linear Sorting");
 				System.out.println("3. Exit");
 				do {
-					System.out.println("(Enter positive integer only)");
-					while(!scan.hasNextInt()) {
-						System.out.println("Enter Numebr Only");
-						scan.next();
-					}
-					choice = scan.nextInt();
+					System.out.println("(Enter positive integer less than 4)");
+					choice = Validation.isInteger();
 				} while(choice <= 0 || choice >= 4);
 				
 				/* Switch case based on user's choice */
 				switch(choice) {
 				 
-					/* If choice is 1, then comparision sorting will be performed */
+					/* If choice is 1, then comparison sorting will be performed */
 					case 1:
-						itemArray = sortingSystemObj.comparisionSorting(itemArray);
+						itemArray = sortingSystemObj.comparisonSorting(itemArray);
 						break;
 						
 					/* If choice is 2, then linear sorting will be performed */
@@ -88,7 +68,14 @@ public class MainSortingSystem {
 				System.out.println("Sorted array is: ");
 				for(int a: itemArray)
 					System.out.println(a);
-			} while(true);
+				System.out.println("Press 1 to continue and any other number to exit");
+				repeatChoice = Validation.isInteger();
+			} while(repeatChoice == 1);
+			
+			if(repeatChoice != 1) {
+				System.out.println("System Closed");
+				System.exit(0);
+			}
 		}
 		catch(Exception e) {
 			System.out.println(e.getMessage());

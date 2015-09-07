@@ -2,7 +2,7 @@ import java.util.LinkedList;
 
 public class SortingSystem {
 	
-	/** This Method performs Comparision Sort 
+	/** This Method performs Comparison Sort 
 	 * Internally this method can invoke one of the two methods
 	 * bubbbleSort() or QuickSort() according to the size of itemArray
 	 * if size of itemArray is less than or equal to 10, then bubbleSort() will be called, 
@@ -11,7 +11,7 @@ public class SortingSystem {
 	 * @param itemArray : input array of elements
 	 * @return sorted array
 	 */
-	public int[] comparisionSorting(int[] itemArray) {
+	public int[] comparisonSorting(int[] itemArray) {
 		
 		/* If itemArray is null or length of itemArray is zero
 		 * then return null 
@@ -28,8 +28,10 @@ public class SortingSystem {
 		/* If size of itemArray is greater than 10, 
 		 * then quickSort() will be used
 		 */
-		else
+		else {
+			System.out.println("------ Sorting using Quick Sort ------");
 			return quickSort(itemArray, 0, itemArray.length-1);
+		}
 		
 	}
 	
@@ -116,7 +118,7 @@ public class SortingSystem {
 			else
 				count++;
 		}
-		
+		System.out.println("------ Sorting using Counting Sort ------");
 		/* itemArray is returned in sorted form */
 		return itemArray;
 	}
@@ -185,6 +187,7 @@ public class SortingSystem {
 				}
 			}
 		}
+		System.out.println("------ Sorting using Radix Sort ------");
 		return itemArray;
 	}
 	
@@ -227,6 +230,7 @@ public class SortingSystem {
 			/* decreasing lastUnsortedIndex each time one element is sorted */
 			lastUnsortedIndex--;
 		}while(swapped);
+		System.out.println("------ Sorting using Bubble Sort ------");
 		return itemArray;
 	}
 	
@@ -266,7 +270,7 @@ public class SortingSystem {
 			
 			/* recursive method recQuickSort is invoked with parameters itemArray, border+1 index */
 			quickSort(itemArray, border+1, upperBound);		
-			
+		
 			/* returning sorted item array at completion of sorting */
 			return itemArray;									
 		}
