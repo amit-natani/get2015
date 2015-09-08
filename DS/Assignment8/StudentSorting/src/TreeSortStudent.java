@@ -2,11 +2,11 @@ import java.util.*;
 
 public class TreeSortStudent {
 	
-	/** root is a reference varibale of type node 
+	/** root is a reference variable of type node 
 	 * that will point to the root of the tree*/
 	private Node root;
 	
-	/** This list contains the rollNumbers traversal of tree */
+	/** This list contains the rollNumbers of students */
 	private List<Integer> rollNumberList = new ArrayList<Integer>();
 	
 	/** This list contains the inorder traversal of tree */
@@ -43,7 +43,7 @@ public class TreeSortStudent {
 
 	/** Method to insert data in the tree
 	 * 
-	 * @param data : Data to be insertde in the tree
+	 * @param data : Data to be inserted in the tree
 	 */
 	public int insert(int rollNumber) {
 		
@@ -73,7 +73,7 @@ public class TreeSortStudent {
 					if (rollNumber < (Integer)currentNode.getData()) {
 						
 						/* if data is less than data of current node than
-						 * left subtree is choosen
+						 * left subtree is chosen
 						 */
 						currentNode = currentNode.getLeft();
 						if (currentNode == null) {
@@ -83,7 +83,7 @@ public class TreeSortStudent {
 					}
 					else {
 						/* if data is greater than data of current node than
-						 * right subtree is choosen
+						 * right subtree is chosen
 						 */
 						currentNode = currentNode.getRight();
 						if (currentNode == null) {
@@ -107,7 +107,7 @@ public class TreeSortStudent {
 		
 		if (node != null) {
 			inorder(node.getLeft());
-			/* inorderList contains preorder traversal of tree */
+			/* rollNumberListSorted contains roll numbers in ascending order*/
 			rollNumberListSorted.add((Integer)node.getData());
 			inorder(node.getRight());
 			return node;
