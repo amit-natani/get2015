@@ -1,5 +1,7 @@
 -- ASsignment-3
 
+USE LibrarySecond;
+
 /* Question 1 : Query to display total number of students, total number of faculty
 and total number of others in library information system in a single row.
 */
