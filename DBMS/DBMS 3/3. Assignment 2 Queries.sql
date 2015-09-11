@@ -1,5 +1,7 @@
 -- Assignment-2
 
+USE LibrarySecond;
+
 /* Question -1 : Query to display subject_wise information on numebr of books purchased.
 The information should include subject_Name, subject_id, number of books purchased.
 */
