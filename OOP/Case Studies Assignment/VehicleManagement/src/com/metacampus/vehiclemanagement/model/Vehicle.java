@@ -8,6 +8,8 @@ public class Vehicle {
 	private String engineCC;
 	private String fuelCapacity;
 	private String mileage;
+	private int price;
+	private int roadTax;
 	
 	/** Method to set Fuel capacity of vehicle
 	 * 
@@ -17,6 +19,38 @@ public class Vehicle {
 		this.fuelCapacity = fuelCapacity;
 	}
 	
+	/** Method to get price of a vehicle 
+	 * 
+	 * @return price : price of vehicle
+	 */
+	public int getPrice() {
+		return price;
+	}
+
+	/** Method to set price of a vehicle
+	 * 
+	 * @param price : price of vehicle
+	 */
+	public void setPrice(int price) {
+		this.price = price;
+	}
+
+	/** Method to get roadTax of a vehicle
+	 * 
+	 * @return roadTax : road tax of vehicle
+	 */
+	public int getRoadTax() {
+		return roadTax;
+	}
+
+	/** Method to set roadTax of a vehicle
+	 * 
+	 * @param roadTax : road tax of vehicle
+	 */
+	public void setRoadTax(int roadTax) {
+		this.roadTax = roadTax;
+	}
+
 	/** Method to set Mileage of vehicle 
 	 * @param mileage
 	 */
@@ -93,6 +127,14 @@ public class Vehicle {
 		return "Make: "+getMake()+",Model: "+getModel()+
 				",Engine CC: "+getEngineCC()+
 				",Fuel Capacity: "+getFuelCapacity()+
-				",Mileage: "+getMileage();
+				",Mileage: "+getMileage()+
+				",Price: "+getPrice()+
+				",Road Tax: "+getRoadTax();
+	}
+	
+	/** Method to calculate on road price of a vehicle */
+	public int calculateOnRoadPrice() {
+		return (price+roadTax);
 	}
 }
+
