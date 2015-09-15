@@ -16,16 +16,28 @@ public class VehicleHelperTest {
 	}
 
 	@Test
-	public void testCreate() {
+	public void testCreateCar() {
 		Car car = VehicleHelper.create("Hyundai", "Verna", "1200 CC", "60 Liters", "21 km/pl", 2, 5);
-		assertNotNull(car);
 		assertEquals("Hyundai", car.getMake());
 	}
 
+	@Test 
+	public void testCreateCarNullTest() {
+		Car car = VehicleHelper.create("Hyundai", "Verna", "1200 CC", "60 Liters", "21 km/pl", 2, 5);
+		assertNotNull(car);
+	}
+	
 	@Test
-	public void testCalculateSalaryForSalesPerson() {
+	public void testCreateBike() {
 		Bike bike = VehicleHelper.create("TVS", "Apache", "180 CC", "14 Liters", "40 km/pl", 5, "Stepped");
 		assertEquals("180 CC",  bike.getEngineCC());
 	}
+	
+	@Test
+	public void testCreateBikeNullTest() {
+		Bike bike = VehicleHelper.create("TVS", "Apache", "180 CC", "14 Liters", "40 km/pl", 5, "Stepped");
+		assertNotNull(bike);
+	}
 
 }
+
