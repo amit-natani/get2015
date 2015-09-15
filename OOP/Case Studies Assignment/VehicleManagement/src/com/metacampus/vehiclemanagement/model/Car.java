@@ -39,7 +39,7 @@ public class Car extends Vehicle {
 	}
 	
 	/** Method to get string representation of details of a car 
-	 * Internally this method calls toString() of {@link Vehicle} to print basic details 
+	 * Internally this method calls toString() of Vehicle Class to print basic details 
 	 * related to vehicle
 	 */
 	public String toString() {
