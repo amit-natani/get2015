@@ -16,12 +16,14 @@ public class VehicleHelper {
 	 * @param engineCC : Engine CC
 	 * @param fuelCapacity : Fuel Capacity
 	 * @param mileage : Mileage 
+	 * @param price : price
+	 * @param roadTax : road tax
 	 * @return Vehicle Object
 	 */
-	public static Vehicle create(String make, String model, String engineCC, String fuelCapacity, String mileage)
+	public static Vehicle create(String make, String model, String engineCC, String fuelCapacity, String mileage, int price, int roadTax)
 	{
 		Vehicle vehicle = new Vehicle();
-		update(make, model, engineCC, fuelCapacity, mileage, vehicle);
+		update(make, model, engineCC, fuelCapacity, mileage, price, roadTax, vehicle);
 		return vehicle;
 	}
 	
@@ -32,16 +34,20 @@ public class VehicleHelper {
 	 * @param engineCC
 	 * @param fuelCapacity
 	 * @param mileage
+	 * @param price
+	 * @param raodTax
 	 * @param vehicle
 	 */
 	private static void update(String make, String model,
 			String engineCC,String fuelCapacity, 
-			String mileage, Vehicle vehicle) {
+			String mileage, int price, int roadTax, Vehicle vehicle) {
 		vehicle.setMake(make);
 		vehicle.setModel(model);
 		vehicle.setEngineCC(engineCC);
 		vehicle.setFuelCapacity(fuelCapacity);
 		vehicle.setMileage(mileage);
+		vehicle.setPrice(price);
+		vehicle.setRoadTax(roadTax);
 	}
 	
 	/** Method to create object of Bike
@@ -51,18 +57,21 @@ public class VehicleHelper {
 	 * @param engineCC
 	 * @param fuelCapacity
 	 * @param mileage
-	 * @param numberOfGears
-	 * @param typeOfSeat
+	 * @param price
+	 * @param roadTax
+	 * @param selfStart
+	 * @param helmetPrice
+	 *
 	 * @return Bike Object
 	 */
 	public static Bike create(
 			String make, String model,
 			String engineCC, String fuelCapacity,
-			String mileage, int numberOfGears, String typeOfSeat) {
+			String mileage, int price, int roadTax, String selfStart, int helmetPrice) {
 		Bike bike = new Bike();
-		update(make, model, engineCC, fuelCapacity, mileage, bike);
-		bike.setNumberOfGears(numberOfGears);
-		bike.setTypeOfSeat(typeOfSeat);
+		update(make, model, engineCC, fuelCapacity, mileage, price, roadTax, bike);
+		bike.setSelfStart(selfStart);
+		bike.setHelmetPrice(helmetPrice);
 		return bike;
 	}
 	
@@ -73,19 +82,25 @@ public class VehicleHelper {
 	 * @param engineCC
 	 * @param fuelCapacity
 	 * @param mileage
-	 * @param numberOfAirbags
-	 * @param numberOfSeats
+	 * @param price
+	 * @param roadTax
+	 * @param aC
+	 * @param powerSteering
+	 * @param accessoryKit
+	 * 
 	 * @return Car Object
 	 */
 	public static Car create(
 			String make, String model,
 			String engineCC, String fuelCapacity,
-			String mileage, int numberOfAirbags, int numberOfSeats) {
+			String mileage, int price, int roadTax, String aC, String powerSteering, String accessoryKit) {
 		Car car = new Car();
-		update(make, model, engineCC, fuelCapacity, mileage, car);
-		car.setNumberOfAirbags(numberOfAirbags);
-		car.setNumberOfSeats(numberOfSeats);
+		update(make, model, engineCC, fuelCapacity, mileage, price, roadTax, car);
+		car.setAC(aC);
+		car.setPowerSteering(powerSteering);
+		car.setAccessoryKit(accessoryKit);
 		return car;
 	}
 
 }
+
