@@ -4,6 +4,9 @@ import com.metacampus.vehiclemanagement.model.Bike;
 import com.metacampus.vehiclemanagement.model.Car;
 import com.metacampus.vehiclemanagement.model.Vehicle;
 
+/** This class helps in creating objects of Car and Bike. In this class
+ * We have overloaded method create() to create objects of Bike nad Car
+ */
 public class VehicleHelper {
 	
 	/** Method to create object of Vehicle
