@@ -13,28 +13,53 @@ public class VehicleDetailPrinterTest {
 
 	@Test
 	public void testToStringCar() {
-		Car car = VehicleHelper.create("Hyundai", "Verna", "1200 CC", "60 Liters", "21 km/pl", 2, 5);
-		String s = "Make: Hyundai,Model: Verna,Engine CC: 1200 CC,Fuel Capacity: 60 Liters,Mileage: 21 km/pl,Number of Airbags: 2,Number of Seats: 5";
-		assertEquals(s , VehicleDetailPrinter.printVehicleSpecification(car));
+		Car carObj = VehicleHelper.create("Hyundai", "Verna", "1200 CC", "60 Liters", "21 km/pl", 900000, 78000, "YES", "YES", "YES");
+		String s = "Make: Hyundai,Model: Verna,Engine CC: 1200 CC,Fuel Capacity: 60 Liters,Mileage: 21 km/pl,Price: 900000,Road Tax: 78000,AC: YES,Power Steering: YES,Accessory Kit: YES";
+		assertEquals(s , VehicleDetailPrinter.printVehicleSpecification(carObj));
 	}
 	
 	@Test
 	public void testToStringCarNullTest() {
-		Car car = VehicleHelper.create("Hyundai", "Verna", "1200 CC", "60 Liters", "21 km/pl", 2, 5);
-		assertNotNull(car);
+		Car carObj = VehicleHelper.create("Hyundai", "Verna", "1200 CC", "60 Liters", "21 km/pl", 900000, 78000, "YES", "YES", "YES");
+		assertNotNull(carObj);
 	}
 	
 	@Test
 	public void testToStringBike() {
-		Bike bike = VehicleHelper.create("TVS", "Apache", "180 CC", "14 Liters", "40 km/pl", 5, "Stepped");
-		String s = "Make: TVS,Model: Apache,Engine CC: 180 CC,Fuel Capacity: 14 Liters,Mileage: 40 km/pl,Number of Gears: 5,Type of Seat: Stepped";
-		assertEquals(s , VehicleDetailPrinter.printVehicleSpecification(bike));
+		Bike bikeObj = VehicleHelper.create("TVS", "Apache", "180 CC", "14 Liters", "40 km/pl", 80000, 7800, "YES", 1000);
+		String s = "Make: TVS,Model: Apache,Engine CC: 180 CC,Fuel Capacity: 14 Liters,Mileage: 40 km/pl,Price: 80000,Road Tax: 7800,Helmet Price: 1000,Self Start: YES";
+		assertEquals(s , VehicleDetailPrinter.printVehicleSpecification(bikeObj));
 	}
 	
 	@Test
 	public void testToStringBikeNullTest() {
-		Bike bike = VehicleHelper.create("TVS", "Apache", "180 CC", "14 Liters", "40 km/pl", 5, "Stepped");
-		assertNotNull(bike);
+		Bike bikeObj = VehicleHelper.create("TVS", "Apache", "180 CC", "14 Liters", "40 km/pl", 80000, 7800, "YES", 1000);
+		assertNotNull(bikeObj);
+	}
+	
+	@Test
+	public void testprintOnRoadPriceCar() {
+		Car carObj = VehicleHelper.create("Hyundai", "Verna", "1200 CC", "60 Liters", "21 km/pl", 900000, 78000, "YES", "YES", "YES");
+		assertEquals(978000 , VehicleDetailPrinter.printOnRoadPrice(carObj));
+	}
+	
+	@Test
+	public void testprintOnRoadCarNullTest() {
+		Car carObj = VehicleHelper.create("Hyundai", "Verna", "1200 CC", "60 Liters", "21 km/pl", 900000, 78000, "YES", "YES", "YES");
+		assertNotNull(carObj);
+	}
+	
+	@Test
+	public void testprintOnRoadBike() {
+		Bike bikeObj = VehicleHelper.create("TVS", "Apache", "180 CC", "14 Liters", "40 km/pl", 80000, 7800, "YES", 1000);
+		assertEquals(87800 , VehicleDetailPrinter.printOnRoadPrice(bikeObj));
+	}
+	
+	@Test
+	public void testprintOnRoadBikeNullTest() {
+		Bike bikeObj = VehicleHelper.create("TVS", "Apache", "180 CC", "14 Liters", "40 km/pl", 80000, 7800, "YES", 1000);
+		assertNotNull(bikeObj);
 	}
 }
+
 
