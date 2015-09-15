@@ -3,49 +3,75 @@ package com.metacampus.vehiclemanagement.model;
 public class Car extends Vehicle {
 
 	/* Data Members */
-	private int numberOfAirbags;
-	private int numberOfSeats;
+	private String AC;
+	private String powerSteering;
+	private String accessoryKit;
 	
-	/** This method returns number of airbags in a car
+	/** Method to find whether AC is available in car or not
 	 * 
-	 * @return numberOfAirbags
+	 * @return AC: true if AC exist, false otherwise
 	 */
-	public int getNumberOfAirbags() {
-		return numberOfAirbags;
+	public String getAC() {
+		return AC;
 	}
-	
-	/** this method set number of airbags in car
+
+	/** MEthod to set AC availability of a car
 	 * 
-	 * @param numberOfAirbags
+	 * @param aC : true if AC available, false otherwise
 	 */
-	public void setNumberOfAirbags(int numberOfAirbags) {
-		this.numberOfAirbags = numberOfAirbags;
+	public void setAC(String aC) {
+		AC = aC;
 	}
-	
-	/** This method returns number of seats in a car 
+
+	/** Method to find whether powerSteering is available in car or not
 	 * 
-	 * @return numberOfSeats
+	 * @return powerSteering: true if powerSteering exist, false otherwise
 	 */
-	public int getNumberOfSeats() {
-		return numberOfSeats;
+	public String getPowerSteering() {
+		return powerSteering;
 	}
-	
-	/** This method set number of seats in a car
+
+	/** MEthod to set powerSteering availability of a car
 	 * 
-	 * @param numberOfSeats
+	 * @param powerSteering : true if powerSteering available, false otherwise
 	 */
-	public void setNumberOfSeats(int numberOfSeats) {
-		this.numberOfSeats = numberOfSeats;
+	public void setPowerSteering(String powerSteering) {
+		this.powerSteering = powerSteering;
+	}
+
+	/** Method to find whether accessoryKit is available in car or not
+	 * 
+	 * @return powerSteering: true if accessoryKit exist, false otherwise
+	 */
+	public String getAccessoryKit() {
+		return accessoryKit;
+	}
+
+	/** MEthod to set accessoryKit availability of a car
+	 * 
+	 * @param accessoryKit : true if accessoryKit available, false otherwise
+	 */
+	public void setAccessoryKit(String accessoryKit) {
+		this.accessoryKit = accessoryKit;
 	}
 	
 	/** Method to get string representation of details of a car 
-	 * Internally this method calls toString() of Vehicle Class to print basic details 
+	 * Internally this method calls toString() of Vehicle class to print basic details 
 	 * related to vehicle
 	 */
+	@Override
 	public String toString() {
-		
-		return super.toString()+",Number of Airbags: "+
-		getNumberOfAirbags()+",Number of Seats: "+getNumberOfSeats();
+	
+		return super.toString()+",AC: "+
+		getAC()+",Power Steering: "+getPowerSteering()+",Accessory Kit: "+getAccessoryKit();
 		
 	}
+
+	/** Method to calculate on road price of a car */
+	@Override
+	public int calculateOnRoadPrice() {
+		return super.calculateOnRoadPrice();
+	}
+	
 }
+
