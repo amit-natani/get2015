@@ -10,4 +10,8 @@ public class VehicleDetailPrinter {
 		return vehicle.toString();
 	}
 
+	/** This method returns on road price of a vehicle */
+	public static int printOnRoadPrice(Vehicle vehicle) {
+		return vehicle.calculateOnRoadPrice();
+	}
 }
