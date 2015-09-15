@@ -81,13 +81,12 @@ of a book.
 */
 
 SELECT 
-    price AS 'Second Maximum Price'
+    MAX(price) AS 'Second Maximum Price'
 FROM
     books
 WHERE
     price < (SELECT 
         max(price)
     FROM
-        books)
-LIMIT 1;
+        books);
 
