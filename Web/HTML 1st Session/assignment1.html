@@ -1,0 +1,219 @@
+<!DocType html>
+<html>
+	<head>
+		<title> Job Profile Creation </title>
+	</head>
+	<body>
+		<form>
+			<table>
+				<tr>
+					<td><b>Create Your Account:</b></td>
+				<tr> 
+					<td align = "right"> Email ID: </td>
+					<td> <input type = "email", name = "email" placeholder = "Enter Your Email"></td>
+				</tr>
+				<tr> 
+					<td align = "right"> Password: </td>
+					<td> <input type = "password", name = "password">
+				</tr>
+				<tr> 
+					<td align = "right"> Confirm Password: </td>
+					<td> <input type = "password", name = "confirm_password">
+				</tr>
+				<tr>
+					<td colspan = "2"> <hr></td>
+				</tr>
+				<tr>
+					<td colspan = "2"><b>Contact Details</b></td>
+				</tr> 
+				<tr>
+					<td align = "right">Your Name:</td>
+					<td ><input type="text" name="name"></td>
+				</tr>
+				<tr>
+					<td align = "right">Current Location :</td>
+					<td>
+						<select name = "currentLocation">
+							<option> Select </option>
+							<option> Jaipur </option>
+							<option> Banglore </option>
+							<option> Kolkata </option>
+							<option> Delhi </option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td align="right" > Mobile: </td>
+					<td> <input type="text" name="mobile"> </td>
+				</tr>
+				<tr>
+					<td> </td>
+					<td> if you do not have a mobile, enter<a href = "#" I> Landline number </a></td>
+				<tr>
+					<td colspan = "2"><hr></td>
+				</tr>
+				<tr>
+					<td  colspan=2 ><b>Current Proffesional Details</b></td>
+				</tr>
+				<tr>
+					<td align="right">Total Experience</td>
+					<td>
+						<select name = "years">
+							<option> Select </option>
+							<option>0</option>
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>
+							<option>6</option>
+							<option>7</option>
+							<option>8</option>
+							<option>9</option>
+							<option>10</option>
+							<option>11</option>
+						</select>
+						<label> Years</label>
+						<select name = "months">
+							<option> Select </option>
+							<option>0</option>
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>
+							<option>6</option>
+							<option>7</option>
+							<option>8</option>
+							<option>9</option>
+							<option>10</option>
+							<option>11</option>
+						</select>
+						<label> Months </label>
+					</td>
+				</tr>
+				<tr>
+					<td align = "right">Current Industry:</td>
+					<td>
+						<select name = "industry">
+							<option> Select </option>
+							<option>Metacube Softwares</option>
+							<option>TCS</option>
+							<option>Infosys</option>
+							<option>HCL</option>
+							<option>A3 Logics</option>
+							<option>Global Logic</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td align = "right">Functionl Areas:</td>
+					<td>
+						<select name = "functionalAreas">
+							<option> Select </option>
+							<option>Development</option>
+							<option>Maintenance</option>
+							<option>HR</option>
+							<option>Testing</option>
+							<option>QA</option>
+							<option>Infrastructure</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td> </td>
+					<td> <a href = "#" > What is my Functional Area and Industry? </a></td>
+				</tr>
+				<tr>
+					<td align="right">Key Skills</td>
+					<td><textarea rows="3" cols="50" name="keyskills" placeholder="Please enter your areas of expertise / specialization"></textarea></td>
+				</tr>
+				<tr>
+					<td align="right"> Resume HeadLine</td>
+					<td><textarea rows="1" cols="100" placeholder="Describe your professional background in one line"></textarea> </td>
+				</tr>
+				<tr>
+					<td colspan = "2"><hr></td>
+				</tr>
+				<tr colspan="2">
+					<td><b>Education Details</b></td>
+				</tr>
+				<tr>
+					<td align = "right">Basic Graduation:</td>
+					<td>
+						<select name = "basicGraduation">
+							<option> Select </option>
+							<option>RTU</option>
+							<option>PTU</option>
+							<option>IIT</option>
+							<option>MNIT</option>
+							<option>BITS</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td align = "right">Post Graduation:</td>
+					<td>
+						<select name = "postGraduation">
+							<option> Select </option>
+							<option>RTU</option>
+							<option>PTU</option>
+							<option>IIT</option>
+							<option>MNIT</option>
+							<option>BITS</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td align = "right">Doctorate/Phd:</td>
+					<td>
+						<select name = "doctorate">
+							<option> Select </option>
+							<option>PTU</option>
+							<option>IIT</option>
+							<option>MNIT</option>
+							<option>BITS</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td colspan = "2"><hr></td>
+				</tr>
+				<tr colspan= "2">
+					<td><b>Upload Resume</b></td>
+				</tr>
+				<tr>
+					<td align="right"> Attach Resume: </td>
+					<td><input type="file" name="file"> </td>
+				</tr>
+				<tr>
+					<td colspan = "2"><hr></td>
+				</tr>
+				<tr colspan="2">
+					<td><b>Mailer And Privacy Settings</b></td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="jobAlertCheck" value = "jobAlerts"> Job Alerts</td>
+					<td><input type="checkbox" name="importantNotificationCheck" value = "importantNotifications"> Important Notifications</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="jobAlertCheck" value = "naukariFastforwardEmails"> Naukri Fastforward E-Mails</td>
+					<td><input type="checkbox" name="importantNotificationCheck" value = "communicationFromClient"> Communication from client (Voice / Calls / SMS)</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="jobAlertCheck" value = "naukriForwardCalls"> Naukri FastForward Calls/SMS</td>
+					<td><input type="checkbox" name="importantNotificationCheck" value = "otherPromotions"> Other promotions / Special Offers</td>
+				</tr>
+				<tr>
+					<td colspan = "2"><hr></td>
+				</tr>
+				<tr>
+					<td colspan = "2"><input type="checkbox" name="accept">I have read & understood, and agree to the <a href="#">Terms and Conditions</a> governing the use</td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><input type="submit" value="Create My Account"></td>
+				</tr>
+			</table>
+		</form>
+	</body>
+</html>
