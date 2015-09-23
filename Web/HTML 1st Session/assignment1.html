@@ -9,36 +9,36 @@
 				<tr>
 					<td><b>Create Your Account:</b></td>
 				<tr> 
-					<td align = "right"> Email ID: </td>
-					<td> <input type = "email", name = "email" placeholder = "Enter Your Email"></td>
+					<td align = "right"><font color = red>*</font>Email ID: </td>
+					<td> <input type = "email", name = "email" placeholder = "Enter Your Email" required></td>
 				</tr>
 				<tr> 
-					<td align = "right"> Password: </td>
-					<td> <input type = "password", name = "password">
+					<td align = "right"> <font color = red>*</font>Password: </td>
+					<td> <input type = "password", name = "password" required>
 				</tr>
 				<tr> 
-					<td align = "right"> Confirm Password: </td>
-					<td> <input type = "password", name = "confirm_password">
+					<td align = "right"> <font color = red>*</font>Confirm Password: </td>
+					<td> <input type = "password", name = "confirm_password" required>
 				</tr>
 				<tr>
 					<td colspan = "2"> <hr></td>
 				</tr>
 				<tr>
-					<td colspan = "2"><b>Contact Details</b></td>
+					<td colspan = "2"><b>Contact Details<font size = "1pt"> This is where recruiters and employers will contact you for jobs.</font></b></td>
 				</tr> 
 				<tr>
 					<td align = "right">Your Name:</td>
 					<td ><input type="text" name="name"></td>
 				</tr>
 				<tr>
-					<td align = "right">Current Location :</td>
+					<td align = "right"><font color = red>*</font>Current Location :</td>
 					<td>
-						<select name = "currentLocation">
-							<option> Select </option>
-							<option> Jaipur </option>
-							<option> Banglore </option>
-							<option> Kolkata </option>
-							<option> Delhi </option>
+						<select name = "currentLocation" required>
+							<option value = ""> Select </option>
+							<option value = "jaipur"> Jaipur </option>
+							<option value = "banglore"> Banglore </option>
+							<option value = "kolkata"> Kolkata </option>
+							<option value = "delhi"> Delhi </option>
 						</select>
 					</td>
 				</tr>
@@ -56,67 +56,67 @@
 					<td  colspan=2 ><b>Current Proffesional Details</b></td>
 				</tr>
 				<tr>
-					<td align="right">Total Experience</td>
+					<td align="right"><font color = red>*</font>Total Experience</td>
 					<td>
-						<select name = "years">
-							<option> Select </option>
-							<option>0</option>
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option>5</option>
-							<option>6</option>
-							<option>7</option>
-							<option>8</option>
-							<option>9</option>
-							<option>10</option>
-							<option>11</option>
+						<select name = "years" required>
+							<option value = ""> Select </option>
+							<option value = "0">0</option>
+							<option value = "1">1</option>
+							<option value = "2">2</option>
+							<option value = "3">3</option>
+							<option value = "4">4</option>
+							<option value = "5">5</option>
+							<option value = "6">6</option>
+							<option value = "7">7</option>
+							<option value = "8">8</option>
+							<option value = "9">9</option>
+							<option value = "10">10</option>
+							<option value = "11">11</option>
 						</select>
 						<label> Years</label>
-						<select name = "months">
-							<option> Select </option>
-							<option>0</option>
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option>5</option>
-							<option>6</option>
-							<option>7</option>
-							<option>8</option>
-							<option>9</option>
-							<option>10</option>
-							<option>11</option>
+						<select name = "months" required>
+							<option value = ""> Select </option>
+							<option value = "0">0</option>
+							<option value = "1">1</option>
+							<option value = "2">2</option>
+							<option value = "3">3</option>
+							<option value = "4">4</option>
+							<option value = "5">5</option>
+							<option value = "6">6</option>
+							<option value = "7">7</option>
+							<option value = "8">8</option>
+							<option value = "9">9</option>
+							<option value = "10">10</option>
+							<option value = "11">11</option>
 						</select>
 						<label> Months </label>
 					</td>
 				</tr>
 				<tr>
-					<td align = "right">Current Industry:</td>
+					<td align = "right"><font color = red>*</font>Current Industry:</td>
 					<td>
-						<select name = "industry">
-							<option> Select </option>
-							<option>Metacube Softwares</option>
-							<option>TCS</option>
-							<option>Infosys</option>
-							<option>HCL</option>
-							<option>A3 Logics</option>
-							<option>Global Logic</option>
+						<select name = "industry" required>
+							<option value =""> Select </option>
+							<option value = "metacube">Metacube Softwares</option>
+							<option value = "tcs">TCS</option>
+							<option value = "infosys">Infosys</option>
+							<option value = "hcl">HCL</option>
+							<option value = "a3logics">A3 Logics</option>
+							<option value = "globallogics">Global Logic</option>
 						</select>
 					</td>
 				</tr>
 				<tr>
-					<td align = "right">Functionl Areas:</td>
+					<td align = "right"><font color = red>*</font>Functionl Areas:</td>
 					<td>
-						<select name = "functionalAreas">
-							<option> Select </option>
-							<option>Development</option>
-							<option>Maintenance</option>
-							<option>HR</option>
-							<option>Testing</option>
-							<option>QA</option>
-							<option>Infrastructure</option>
+						<select name = "functionalAreas" required>
+							<option value = ""> Select </option>
+							<option value = "development">Development</option>
+							<option value - "maintenance">Maintenance</option>
+							<option value = "hr">HR</option>
+							<option value = "testing">Testing</option>
+							<option value = "qa">QA</option>
+							<option value = "infrastructure">Infrastructure</option>
 						</select>
 					</td>
 				</tr>
@@ -125,29 +125,32 @@
 					<td> <a href = "#" > What is my Functional Area and Industry? </a></td>
 				</tr>
 				<tr>
-					<td align="right">Key Skills</td>
-					<td><textarea rows="3" cols="50" name="keyskills" placeholder="Please enter your areas of expertise / specialization"></textarea></td>
+					<td align="right"><font color = red>*</font>Key Skills</td>
+					<td><textarea rows="3" cols="50" name="keyskills" placeholder="Please enter your areas of expertise / specialization" required></textarea></td>
 				</tr>
 				<tr>
-					<td align="right"> Resume HeadLine</td>
-					<td><textarea rows="1" cols="100" placeholder="Describe your professional background in one line"></textarea> </td>
+					<td align="right"> <font color = red>*</font>Resume HeadLine</td>
+					<td><textarea rows="1" cols="100" placeholder="Describe your professional background in one line" required maxlength = "250"></textarea> </td>
+				</tr>
+				<tr>
+					<td colspan = "4" align = "right">Max 250 characters</td>
 				</tr>
 				<tr>
 					<td colspan = "2"><hr></td>
 				</tr>
 				<tr colspan="2">
-					<td><b>Education Details</b></td>
+					<td><b>Education Details<font size = "1pt"> Please list your areas of study.</font></b></td>
 				</tr>
 				<tr>
-					<td align = "right">Basic Graduation:</td>
+					<td align = "right"><font color = red>*</font>Basic Graduation:</td>
 					<td>
-						<select name = "basicGraduation">
-							<option> Select </option>
-							<option>RTU</option>
-							<option>PTU</option>
-							<option>IIT</option>
-							<option>MNIT</option>
-							<option>BITS</option>
+						<select name = "basicGraduation" required>
+							<option value = ""> Select </option>
+							<option value = "rtu">RTU</option>
+							<option value = "ptu">PTU</option>
+							<option value = "iit">IIT</option>
+							<option value = "mnit">MNIT</option>
+							<option value = "bits">BITS</option>
 						</select>
 					</td>
 				</tr>
@@ -155,12 +158,12 @@
 					<td align = "right">Post Graduation:</td>
 					<td>
 						<select name = "postGraduation">
-							<option> Select </option>
-							<option>RTU</option>
-							<option>PTU</option>
-							<option>IIT</option>
-							<option>MNIT</option>
-							<option>BITS</option>
+							<option value = ""> Select </option>
+							<option value = "rtu">RTU</option>
+							<option value = "ptu">PTU</option>
+							<option value = "iit">IIT</option>
+							<option value = "mnit">MNIT</option>
+							<option value = "bits">BITS</option>
 						</select>
 					</td>
 				</tr>
@@ -168,11 +171,11 @@
 					<td align = "right">Doctorate/Phd:</td>
 					<td>
 						<select name = "doctorate">
-							<option> Select </option>
-							<option>PTU</option>
-							<option>IIT</option>
-							<option>MNIT</option>
-							<option>BITS</option>
+							<option value = ""> Select </option>
+							<option value = "ptu">PTU</option>
+							<option value = "iit">IIT</option>
+							<option value = "mnit">MNIT</option>
+							<option value = "bits">BITS</option>
 						</select>
 					</td>
 				</tr>
@@ -180,11 +183,11 @@
 					<td colspan = "2"><hr></td>
 				</tr>
 				<tr colspan= "2">
-					<td><b>Upload Resume</b></td>
+					<td><b>Upload Resume<font size = "1pt"> Please upload a detailed resume.</font></b></td>
 				</tr>
 				<tr>
-					<td align="right"> Attach Resume: </td>
-					<td><input type="file" name="file"> </td>
+					<td align="right"> <font color = red>*</font>Attach Resume: </td>
+					<td><input type="file" name="file" required> </td>
 				</tr>
 				<tr>
 					<td colspan = "2"><hr></td>
@@ -208,7 +211,7 @@
 					<td colspan = "2"><hr></td>
 				</tr>
 				<tr>
-					<td colspan = "2"><input type="checkbox" name="accept">I have read & understood, and agree to the <a href="#">Terms and Conditions</a> governing the use</td>
+					<td colspan = "2"><input type="checkbox" name="accept" required>I have read & understood, and agree to the <a href="#">Terms and Conditions</a> governing the use</td>
 				</tr>
 				<tr>
 					<td colspan="2" align="center"><input type="submit" value="Create My Account"></td>
