@@ -78,7 +78,6 @@ button {
 }
 
 #leftnavigation ul li {
-	float : left;
 	padding-left : 25px;
 	padding-top : 5px;
 	padding-bottom : 5px;
@@ -107,6 +106,7 @@ button {
 }
 
 #leftnavigation ul li a:active {
+	border : 1px solid black;
 	width : 280px;
 	background-color : #89C8DC;
 }
@@ -138,7 +138,7 @@ button {
 #leftblock {
 	position : relative;
 	margin-left : -300px;
-	margin-top : 120px;
+	margin-top : 150px;
 	float : left;
 	width : 300px;
 	background-color : lightgrey;
