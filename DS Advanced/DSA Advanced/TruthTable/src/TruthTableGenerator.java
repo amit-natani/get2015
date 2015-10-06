@@ -18,6 +18,8 @@ public class TruthTableGenerator {
 				if(input == null || input.length() == 0) {
 					return 0;
 				}
+				input = input.toLowerCase();
+				input = input.trim();
 				if(Validation.isExpression(input)) {
 					/* input string will be furnished */
 					input = furnish(input);
