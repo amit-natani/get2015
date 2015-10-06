@@ -151,57 +151,53 @@ public class TruthTableGenerator {
 		    
 		    /* iterating over the complete input string */
 		    for (j = 0; j < inputUpdate.length(); j++) {
-		        char ch = inputUpdate.charAt(j);
-	            if (ch == ' ') {
-	            } 
-	            else {
-	            	/* if character is letter then push that onto the stack */
-	            	if (Character.isLetter(ch)) {
-	                    list.push(ch);
-	                } 
-	                else {
-	                	/* if character is not operator
-	                	 * then pop one character from stack and perform 
-	                	 * not operation on that and store the result on 
-	                	 * the stack
+		        char ch = inputUpdate.charAt(j); 
+            	/* if character is letter then push that onto the stack */
+            	if (Character.isLetter(ch)) {
+                    list.push(ch);
+                } 
+                else {
+                	/* if character is not operator
+                	 * then pop one character from stack and perform 
+                	 * not operation on that and store the result on 
+                	 * the stack
+                	 */
+                	if(ch == '~') {
+                		c1 = list.pop();
+                		list.push(operationPerform(c1, ch));
+                	}
+                	else {
+                		/* popping top two characters from stack
 	                	 */
-	                	if(ch == '~') {
-	                		c1 = list.pop();
-	                		list.push(operationPerform(c1, ch));
-	                	}
-	                	else {
-	                		/* popping top two characters from stack
-		                	 */
-		                    c1 = list.pop();
-		                    c2 = list.pop();
-	
-		                    switch (ch) {
-		                    	/* if operator is AND operator 
-		                			this case will be executed
-		                    	 */
-		                        case '&':
-		                            list.push(operationPerform(c1,c2,'&'));
-		                            break;
-		                         /* if operator is OR operator 
-		                			this case will be executed
-		                    	 */
-		                        case '|':
-		                            list.push(operationPerform(c1,c2,'|'));
-		                            break;
-		                        /* This Code will be executed if the order of operators is invalid */
-		                        default:
-		                            System.out.println("Invalid operator order!");
-		                    }
-	                	}
+	                    c1 = list.pop();
+	                    c2 = list.pop();
+
+	                    switch (ch) {
+	                    	/* if operator is AND operator 
+	                			this case will be executed
+	                    	 */
+	                        case '&':
+	                            list.push(operationPerform(c1,c2,'&'));
+	                            break;
+	                         /* if operator is OR operator 
+	                			this case will be executed
+	                    	 */
+	                        case '|':
+	                            list.push(operationPerform(c1,c2,'|'));
+	                            break;
+	                        /* This Code will be executed if the order of operators is invalid */
+	                        default:
+	                            System.out.println("Invalid operator order!");
+	                    }
 	                }
 	            }
 		    }
 		    res =  list.pop();
-		    for(int count = 0; count < chars[0].length; count++) {
-		    	System.out.print(chars[i][count]+"\t");
-		    }
-		    System.out.println(res);
-		}
+			for(int count = 0; count < chars[0].length; count++) {
+				System.out.print(chars[i][count]+"\t");
+			}
+			System.out.println(res);
+	    }
 	}
 
 	/** method to perform binary operations
