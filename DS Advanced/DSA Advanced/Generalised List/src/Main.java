@@ -56,6 +56,7 @@ public class Main {
 									System.out.println(list.first);
 								else
 									System.out.println("List is empty");
+								break;
 							case 6:
 								System.out.println("Enter a number");
 								while (!sc.hasNextInt()) {
