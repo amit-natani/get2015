@@ -55,7 +55,7 @@ public class Validation {
 	    /* Validation for acceptable symbols number or open and closed braces */
 	   for (char c : expressionArray) 
 	    {
-	    	if(!(Character.isLetter(c)) && !(c == '&') && !(c == '|') && !(c == '~') && !(c == '(') && !(c == ')')) {
+	    	if(!(Character.isLetter(c)) && !(c == '&') && !(c == '|') && !(c == '~') && !(c == '(') && !(c == ')') && !(c == ' ')) {
 	    		return false;
 	    	}
 	        else
