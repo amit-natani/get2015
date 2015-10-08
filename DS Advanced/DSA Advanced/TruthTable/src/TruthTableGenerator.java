@@ -18,6 +18,7 @@ public class TruthTableGenerator {
 				if(input == null || input.length() == 0) {
 					return 0;
 				}
+				input = input.replaceAll("\\s+","");
 				input = input.toLowerCase();
 				input = input.trim();
 				if(Validation.isExpression(input)) {
@@ -153,7 +154,11 @@ public class TruthTableGenerator {
 		    for (j = 0; j < inputUpdate.length(); j++) {
 		        char ch = inputUpdate.charAt(j); 
             	/* if character is letter then push that onto the stack */
-            	if (Character.isLetter(ch)) {
+            	if(ch == ' '){
+            		
+            	}
+		        
+            	else if (Character.isLetter(ch)) {
                     list.push(ch);
                 } 
                 else {
