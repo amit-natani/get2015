@@ -34,3 +34,67 @@ function activeLogin()
 		document.getElementById("submitLogin").disabled = false;
 	}
 }
+
+function validateLogin()
+{	
+	var flag = false;
+	var x = document.getElementById("username").value;
+	var y = document.getElementById("password").value;
+	if(x=="amitnatani")
+	{
+		if(y=="8559818925")
+		{
+			flag = true;
+		}
+	}
+	if(flag == false) {
+		alert("Invalid Username or password");
+	}
+	return flag;
+}
+
+function createValidate(flag1) {
+	var make = document.getElementById("make").value;
+	var model = document.getElementById("model").value;
+	var fuelCapacity = document.getElementById("fuelCapacity").value;
+	var engineCC = document.getElementById("engineCC").value;
+	var mileage = document.getElementById("mileage").value;
+	var price = document.getElementById("price").value;
+	var roadTax = document.getElementById("roadTax").value;
+	var flag = true;
+	if(make == "") {
+		alert("Make not entered");
+		flag = false;
+	}
+	else if(model == "") {
+		alert("Model not entered");
+		flag = false;
+	}
+	else if(engineCC == "") {
+		alert("EngineCC not entered");
+		flag = false;
+	}
+	else if(fuelCapacity == "") {
+		alert("Fuel Capacity Not entered");
+		flag = false;
+	}
+	else if(mileage == "") {
+		alert("Mileage not entered");
+		flag = false;
+	} 
+	else if(price == "") {
+		alert("price not entered");
+		flag = false;
+	}
+	else if(roadTax == "") {
+		alert("Road tax not entered");
+		flag = false;
+	}
+	else {
+		if(flag1) 
+			alert("Vehicle created successfully");
+		else
+			alert("vehicle Edited Successfully");
+	}
+	return flag;
+}

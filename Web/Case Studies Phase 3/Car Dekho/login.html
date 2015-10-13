@@ -4,6 +4,7 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 <script type="text/javascript" src="js/Script.js"></script>
+	
 <link rel="stylesheet" href ="css/Search.css">
 </head>
 <body>
@@ -37,7 +38,7 @@
 					<table>
 				
 					<tr>
-						<td colspan = "2"> <i><b>Login as Admin to create and Edit cars</i></b></td>
+						<td colspan = "2"> <font size = "5"><i><b>Login as Admin to create and Edit cars</i></b></font></td>
 					</tr>
 					<tr>
 					<td>Username :</td>
@@ -48,7 +49,7 @@
 					<td><input id = "password" class = "text" type = "password" name = "password" placeholder = "Enter Password" oninput = "activeLogin()"/></br></td>
 					</tr>
 					<tr>
-					<td colspan = "2" align = "center"><input class = "submit" id = "submitLogin" type = "submit" value = "Login" onclick = "validateLogin()" formaction = "AdminHome.html" disabled/></td>
+					<td colspan = "2" align = "center"><input class = "submit" id = "submitLogin" type = "submit" value = "Login" onclick = "return validateLogin()" formaction = "AdminHome.html" disabled/></td>
 					</tr>
 					</table>
 			

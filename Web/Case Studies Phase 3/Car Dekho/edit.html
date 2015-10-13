@@ -4,6 +4,7 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 <link rel = "stylesheet" href="css/Search.css">
+<script type = "text/javascript" src = "js/Script.js"></script>
 </head>
 <body>
 	<header>
@@ -33,7 +34,7 @@
 	</nav>
 	<div class = "section">
 		<div id = "edit">
-			<form>
+			<form method = "post">
 				<table>
 					<caption>Edit</caption>
 						<tr>
@@ -42,7 +43,7 @@
 						</tr>
 						<tr>
 							<td>Created By:  </td>
-							<td><input class = "text" type = "text" name = "createdBy" id = "createdBy" value = "Parul" disabled/></td>
+							<td><input class = "text" type = "text" name = "createdBy" id = "createdBy" value = "Amit" disabled/></td>
 						</tr>
 						<tr>
 							<td>Model : </td>
@@ -69,7 +70,7 @@
 							<td><input class = "text" type = "number" name = "raodTax" id = "roadTax" value = "12" min = "8" max = "20"/></td>
 						</tr>
 						<tr>
-							<td colspan = "2" align = "center"><input class = "submit" type = "submit" name = "createCarSubmit" id = "createCarSubmit" value = "Edit Car" formaction = "AdminHome.html"/></td>
+							<td colspan = "2" align = "center"><input class = "submit" type = "submit" name = "createCarSubmit" id = "createCarSubmit" value = "Edit Car" onclick = "return createValidate(false)"formaction = "AdminHome.html"/></td>
 						</tr>
 					</table>
 			</form>
@@ -82,7 +83,7 @@
 			<li class = "navBar"><a href = "AdminHofme.html">Home</a></li>
 			<li class = "navBar"><a href = "AdminAboutUs.html">About Us</a></li>
 			<li class = "navBar"><a href = "AdminContactUs.html">Contact Us</a></li>
-			<li class = "navBar"><a href = "AdminCareers.html	">Careers</a></li>		
+			<li class = "navBar"><a href = "AdminCareers.html">Careers</a></li>		
 		</ul>
 	</footer>
 </body>
