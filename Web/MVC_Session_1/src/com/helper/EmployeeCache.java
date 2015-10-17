@@ -18,10 +18,10 @@ public class EmployeeCache{
 	/* Creating object of EmployeCache */
 	private static EmployeeCache employeeCache = new EmployeeCache();
 	private EmployeeCache() {
-		cache.put(1, new Employee("Parul", "parul@mail.com", 1, 21, "03-8-15"));
-		cache.put(2, new Employee("Manish", "manish@mail.com", 2, 22, "03-8-15"));
-		cache.put(3, new Employee("Kajal", "kajal@mail.com", 3, 23, "03-8-15"));
-		cache.put(4, new Employee("Riddhi", "riddhi@mail.com", 4, 24, "03-8-15"));
+		cache.put(1, new Employee("Amit", "amit@mail.com", 1, 21, "03-8-15"));
+		cache.put(2, new Employee("Ankit", "ankit@mail.com", 2, 22, "03-8-15"));
+		cache.put(3, new Employee("Gaurav", "gaurav@mail.com", 3, 23, "03-8-15"));
+		cache.put(4, new Employee("Kanak", "kanak@mail.com", 4, 24, "03-8-15"));
 		cache.put(5, new Employee("Hemant", "hemant@mail.com", 5, 25, "03-8-15"));
 	}
 	
