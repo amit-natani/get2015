@@ -10,17 +10,17 @@
 			<legend> :: Registration :: </legend>
 			<form id = "myform" action = "Registration" method = "post">
 				<label><b>Enter Name:<span id = "span">*</span></b></label><br/>
-				<input id = "name" class = "text" type = "text" name = "name" pattern = "[a-zA-Z]{2,}" placeholder = "Enter Name"/><br/>
+				<input id = "name" class = "text" type = "text" name = "name" pattern = "[a-zA-Z]{2,}[a-zA-Z ]{0,}" placeholder = "Enter Name" required/><br/>
 				<label><b>Enter UserName:<span id = "span">*</span></b></label><br/>
-				<input id = "username" class = "text" type = "text" name = "username" pattern = "[a-zA-Z]{2,}" placeholder = "Enter Username"/><br/>
+				<input id = "username" class = "text" type = "text" name = "username" pattern = "[a-z|A-Z|0-9]*" placeholder = "Enter Username" required/><br/>
 				<label><b>Enter Email:<span id = "span">*</span></b></label><br/>
-				<input id = "email" class = "text" type = "email" name = "email" placeholder = "Enter Email"/><br/>
+				<input id = "email" class = "text" type = "email" name = "email" placeholder = "Enter Email" required/><br/>
 				<label><b>Enter Password:<span id = "span">*</span></b></label><br/>
-				<input id = "password" class = "text" type = "password" name = "password" placeholder = "Enter Password"/><br/>
+				<input id = "password" class = "text" type = "password" name = "password" placeholder = "Enter Password" required/><br/>
 				<label><b>Re-Enter Password:<span id = "span">*</span></b></label><br/>
-				<input id = "confirmPassword" class = "text" type = "password" name = "confirmPassword" placeholder = "Re-Enter Password"/><br/>
+				<input id = "confirmPassword" class = "text" type = "password" name = "confirmPassword" placeholder = "Re-Enter Password" required/><br/>
 				<label><b>Choose State:<span id = "span">*</span></b></label><br/>
-				<select class = "text" id = "state" name = "state"  onchange = "cityShow()">
+				<select class = "text" id = "state" name = "state"  onchange = "cityShow()" required>
 					<option value ="">--Select State--</option>
 					<option value = "rajasthan">Rajasthan</option>
 					<option value = "maharashtra">Maharashtra</option>
@@ -28,7 +28,7 @@
 					<option value = "punjab">Punjab</option>
 				</select><br/>
 				<label><b>Choose City:<span id = "span">*</span></b></label><br/>
-				<select class = "text" id = "city" name = "city">
+				<select class = "text" id = "city" name = "city" required>
 					<option value ="">--Select City--</option>
 				</select><br/>
 				<input type = "submit" value = "Submit" id = "submitbutton" onclick = "return validate()"/><br/>
