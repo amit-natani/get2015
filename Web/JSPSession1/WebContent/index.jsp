@@ -10,15 +10,15 @@
 			<legend> :: Registration :: </legend>
 			<form id = "myform" action = "Registration" method = "post">
 				<label><b>Enter Name:<span id = "span">*</span></b></label><br/>
-				<input id = "name" class = "text" type = "text" name = "name" pattern = "[a-zA-Z]{2,}[a-zA-Z ]{0,}" placeholder = "Enter Name"/><br/>
+				<input id = "name" class = "text" type = "text" name = "name" pattern = "[a-zA-Z]{2,}[a-zA-Z ]{0,}" placeholder = "Enter Name" title = "Provide a valid Name"/><br/>
 				<label><b>Enter UserName:<span id = "span">*</span></b></label><br/>
-				<input id = "username" class = "text" type = "text" name = "username" pattern = "[a-z|A-Z|0-9]*" placeholder = "Enter Username"/><br/>
+				<input id = "username" class = "text" type = "text" name = "username" pattern = "[a-z|A-Z|0-9]*" placeholder = "Enter Username" maxlength = "14" title = "Enter only letters and Numbers"/><br/>
 				<label><b>Enter Email:<span id = "span">*</span></b></label><br/>
 				<input id = "email" class = "text" type = "email" name = "email" placeholder = "Enter Email"/><br/>
 				<label><b>Enter Password:<span id = "span">*</span></b></label><br/>
-				<input id = "password" class = "text" type = "password" name = "password" placeholder = "Enter Password"/><br/>
+				<input id = "password" class = "text" type = "password" name = "password" placeholder = "Enter Password" minlength = "6" maxlength = "15" title = "Minimum 6 Characters long"/><br/>
 				<label><b>Re-Enter Password:<span id = "span">*</span></b></label><br/>
-				<input id = "confirmPassword" class = "text" type = "password" name = "confirmPassword" placeholder = "Re-Enter Password"/><br/>
+				<input id = "confirmPassword" class = "text" type = "password" name = "confirmPassword" minlength = "6" maxlength = "15" placeholder = "Re-Enter Password"/><br/>
 				<label><b>Choose State:<span id = "span">*</span></b></label><br/>
 				<select class = "text" id = "state" name = "state"  onchange = "cityShow()">
 					<option value ="">--Select State--</option>
