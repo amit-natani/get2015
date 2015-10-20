@@ -12,7 +12,7 @@
 		<legend> ::Login:: </legend>
 		<form id = "myform" action = "LoginValidation"  method = "post">
 			<label><b>Enter First Name:<span id = "span">*</span></b></label><br/>
-			<input id = "username" class = "text" type = "text" name = "username" pattern = "[a-zA-Z]{2,}" placeholder = "Enter Username"/><br/>
+			<input id = "username" class = "text" type = "text" name = "username" pattern = "[a-z|A-Z|0-9]*" placeholder = "Enter Username"/><br/>
 			<label><b>Enter Password:<span id = "span">*</span></b></label><br/>
 			<input id = "password" class = "text" type = "password" name = "password" placeholder = "Enter Password"/><br/>
 			<input type = "submit" value = "Login" id = "submitbutton" onclick = "return validate()"/><br>
