@@ -64,7 +64,7 @@
 					</tr>
 					<tr>
 						<td>Employee Age</td>
-						<td><input type="number" name="age" id="age" min="20" value = 
+						<td><input type="number" name="age" id="age" min="20" max = "70" value = 
 						<%=
 							age
 						%>>
