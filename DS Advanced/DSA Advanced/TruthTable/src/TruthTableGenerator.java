@@ -20,7 +20,6 @@ public class TruthTableGenerator {
 				}
 				input = input.replaceAll("\\s+","");
 				input = input.toLowerCase();
-				input = input.trim();
 				if(Validation.isExpression(input)) {
 					/* input string will be furnished */
 					input = furnish(input);
