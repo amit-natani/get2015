@@ -11,9 +11,9 @@
 	<fieldset>
 		<legend> ::Login:: </legend>
 		<form id = "myform" action = "LoginValidation"  method = "post">
-			<label><b>Enter UserName:<span id = "span">*</span></b></label><br/>
+			<label><b>Enter UserName:<span>*</span></b></label><br/>
 			<input id = "username" class = "text" type = "text" name = "username" pattern = "[a-z|A-Z|0-9]*" placeholder = "Enter Username" maxlength = "14"/><br/>
-			<label><b>Enter Password:<span id = "span">*</span></b></label><br/>
+			<label><b>Enter Password:<span>*</span></b></label><br/>
 			<input id = "password" class = "text" type = "password" name = "password" placeholder = "Enter Password"/><br/>
 			<input type = "submit" value = "Login" id = "submitbutton" onclick = "return validate()"/><br>
 			<label><font color = "red">${a}</font></label>
