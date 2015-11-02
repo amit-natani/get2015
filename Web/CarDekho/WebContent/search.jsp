@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Search Car</title>
 <link rel="stylesheet" href="css/S	earch.css">
 <script type="text/javascript" src="js/Script.js"></script>
 </head>
