@@ -138,11 +138,11 @@ public class EmployeeManagement {
 			e.printStackTrace();
 		}
 		if(isDelete == 1){
-			String result = "@Produces(\"application/xml\") Output: \nCreate Employee Output \n\n Employee Deleted successfully";
+			String result = "@Produces(\"application/xml\") Output: \nDelete Employee Output \n\n Employee Deleted successfully";
 			return "<employeeservice>" + "<id>" + id + "</id>" + "<employeeoutput>" + result + "</employeeoutput>" + "</employeeservice>";
 		}
 		else{
-			String result = "@Produces(\"application/xml\") Output: \nCreate Employee Output \n\n Employee can't be deleted";
+			String result = "@Produces(\"application/xml\") Output: \nDelete Employee Output \n\n Employee can't be deleted";
 			return "<employeeservice>" + "<id>" + id + "</id>" + "<employeeoutput>" + result + "</employeeoutput>" + "</employeeservice>";
 		}
 	}
