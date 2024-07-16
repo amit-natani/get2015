@@ -1,2 +1,2 @@
-# get2015 test
+# get2015  
 Training repo for GET 2015 batch
