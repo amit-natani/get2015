@@ -1,2 +1,2 @@
-# get2015  test22july 1116
+# get2015  25 July 1222
 Training repo for GET 2015 batch
